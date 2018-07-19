@@ -1,6 +1,7 @@
 # Ve373 project Battle of Tanks
 ### Tree Structure
 
+```bash
 ├─debug
 │  ├─joystick
 │  ├─LCD
@@ -8,6 +9,8 @@
 │  └─src
 └─main
     └─src
+
+```
 
 + `./main/` is the workspace for main program.
 + + `./main/src/` is for main.c and all *.h files.
