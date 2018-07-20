@@ -2,10 +2,7 @@
 #define _MAP_H_
 #include "bullet.h"
 #include "tank.h"
-#define MAP_RANGE_X 10
-#define MAP_RANGE_Y 10
-
-extern int map[MAP_RANGE_X][MAP_RANGE_Y];
+#include "game.h"
 
 enum MAP_STAT
 {
