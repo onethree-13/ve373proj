@@ -35,3 +35,30 @@ Yiming WU
 
 - game design (deadline July 29th)
 
+
+### Game Rules
+
++ Every turn, tanks move first, then the bullets.
++ The damage range of each bullet is forward two grids.
++ The tank shoots every two turns. 
+
+
+
+### Demo
+
+#### Legends
+
+| item   | legend                             |
+| ------ | :--------------------------------- |
+| tank   | $\top$, $\bot$, $\dashv$, $\vdash$ |
+| bullet | $\bullet$                          |
+| danger | $\star$                            |
+
+#### Shooting
+
+| turn 0 | $\vdash$ |           |         |           |         |           |         |         |
+| ------ | -------- | --------- | ------- | --------- | ------- | --------- | ------- | ------- |
+| turn 1 | $\vdash$ | $\bullet$ | $\star$ | $\star$   |         |           |         |         |
+| turn 2 | $\vdash$ |           |         | $\bullet$ | $\star$ | $\star$   |         |         |
+| turn 3 | $\vdash$ | $\bullet$ | $\star$ | $\star$   |         | $\bullet$ | $\star$ | $\star$ |
+

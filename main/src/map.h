@@ -4,15 +4,48 @@
 #include "tank.h"
 #include "game.h"
 
+void InitMapStat();
+
+void CheckTankStat();
+void UpdateMapStat();
+
 enum MAP_STAT
 {
-    EMPTY = 0,
-    TANK1_OCCUPY = 1,
-    TANK2_OCCUPY = 2,
-    BULLET1 = 3,
-    BULLET2 = 4,
-    OBSTACLE = 5,
-    POISON = 6
+    EMPTY,
+    TANK1,
+    TANK2,
+    BULLET,
+    BLOCK,
+    BOOM
 };
+
+static default_map[MAP_RANGE_X][MAP_RANGE_Y] = {
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+    EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, //
+};
+
+void InitMapStat()
+{
+    int i, j;
+    for (i = 0; i < MAP_RANGE_X; i++)
+        for (j = 0; j < MAP_RANGE_Y; j++)
+            map[i][j] = default_map[i][j];
+}
+
+void UpdateMapStat()
+{
+    int i, j;
+    UpdateTankStat();
+    UpdateBulletStat();
+    InitMapStat();
+}
 
 #endif
