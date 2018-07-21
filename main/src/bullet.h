@@ -124,6 +124,8 @@ void UpdateBulletStat()
                 tank2.stat = TANK_STAT::EXPLODE;
                 map[x][y] = MAP_STAT::BOOM;
                 break;
+            case MAP_STAT::BULLET:
+                exit(-2);
             case MAP_STAT::BLOCK:
                 break;
             case MAP_STAT::BOOM:

@@ -43,9 +43,10 @@ void InitMapStat()
 void UpdateMapStat()
 {
     int i, j;
-    UpdateTankStat();
-    UpdateBulletStat();
-    InitMapStat();
+    for (i = 0; i < MAP_RANGE_X; i++)
+        for (j = 0; j < MAP_RANGE_Y; j++)
+            if (map[i][j] == MAP_STAT::BOOM)
+                map[i][j] = MAP_STAT::EMPTY;
 }
 
 #endif
