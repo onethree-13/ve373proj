@@ -23,6 +23,21 @@ const char *GetMapName(enum MAP_STAT stat)
     }
 }
 
+const char *GetGameStatName(enum GAME_STAT stat)
+{
+    switch (stat)
+    {
+    case RUNNING:
+        return "RUNNING";
+    case TANK1_WIN:
+        return "TANK1_WIN";
+    case TANK2_WIN:
+        return "TANK2_WIN";
+    case DRAW:
+        return "DRAW";
+    }
+}
+
 void display()
 {
     int i, j;
@@ -38,10 +53,24 @@ int main()
 {
     int tank1movedir, tank1shootdir, tank2movedir, tank2shootdir;
     GameStart();
+    tank1.x = 3;
+    tank1.y = 3;
+    tank1.move_dir = MOVE_STATIC;
+    tank1.shoot_dir = SHOOT_DOWN;
+    tank1.stat = HEALTHY;
+    map[0][0] = MAP_EMPTY;
+    map[tank1.x][tank1.y] = MAP_TANK1;
+    tank2.x = 6;
+    tank2.y = 6;
+    tank2.move_dir = MOVE_STATIC;
+    tank2.shoot_dir = SHOOT_UP;
+    tank2.stat = HEALTHY;
+    map[MAP_RANGE_X - 1][MAP_RANGE_Y - 1] = MAP_EMPTY;
+    map[tank2.x][tank2.y] = MAP_TANK2;
     printf("Game Initialize.\n");
     display();
     getchar();
-    while (CheckGameStat())
+    while (!CheckGameStat())
     {
         UpdateMapStat();
         printf("UpdateMapStat\n");
@@ -88,4 +117,5 @@ int main()
         display();
         getchar();
     }
+    printf("%s\n", GetGameStatName(CheckGameStat()));
 }

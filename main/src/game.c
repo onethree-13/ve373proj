@@ -13,12 +13,12 @@ void GameStart()
 
 int CheckGameStat()
 {
-    if (tank1.stat = EXPLODE)
-        if (tank2.stat = EXPLODE)
+    if (tank1.stat == EXPLODE)
+        if (tank2.stat == EXPLODE)
             return DRAW;
         else
             return TANK2_WIN;
-    else if (tank2.stat = EXPLODE)
+    else if (tank2.stat == EXPLODE)
         return TANK1_WIN;
     return RUNNING;
 }

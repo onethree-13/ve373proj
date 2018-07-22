@@ -75,11 +75,6 @@ void UpdateBulletStat()
             bullet[i][j] = BULLET_NONE;
         }
     }
-#ifdef DEBUG_BULLET
-    printf("update bullet_old\n");
-    DisplayBullet();
-    getchar();
-#endif
     for (i = 0; i < MAP_RANGE_X; i++)
     {
         for (j = 0; j < MAP_RANGE_Y; j++)
@@ -148,10 +143,6 @@ void UpdateBulletStat()
                     bullet[x][y] = bullet_old[i][j];
                     map[x][y] = MAP_BULLET;
                 }
-                else
-                {
-                    map[x][y] = MAP_BOOM;
-                }
                 break;
             case MAP_TANK1:
                 tank1.stat = EXPLODE;
@@ -162,8 +153,8 @@ void UpdateBulletStat()
                 map[x][y] = MAP_BOOM;
                 break;
             case MAP_BULLET:
-                fprintf(stderr, "error: -2\n");
-                exit(-2);
+                map[x][y] = MAP_BOOM;
+                break;
             case MAP_BLOCK:
                 break;
             case MAP_BOOM:
