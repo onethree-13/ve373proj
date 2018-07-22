@@ -8,6 +8,7 @@ void GameStart()
 {
     InitMapStat();
     InitTankStat();
+    InitBulletStat();
 }
 
 int CheckGameStat()

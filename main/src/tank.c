@@ -3,6 +3,7 @@
 #include "map.h"
 #include "game.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 tank tank1, tank2;
 
@@ -170,6 +171,7 @@ void TankShoot(int num)
         y = tanka->y;
         break;
     default:
+        fprintf(stderr, "error: -4\n");
         exit(-4);
     }
     if (x < 0 || x > MAP_RANGE_X - 1)
@@ -214,6 +216,7 @@ void TankShoot(int num)
     case MAP_BOOM:
         break;
     default:
+        fprintf(stderr, "error: -4\n");
         exit(-4);
     }
 }

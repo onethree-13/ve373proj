@@ -3,6 +3,11 @@
 #include "map.h"
 #include "game.h"
 #include <stdlib.h>
+#include <stdio.h>
+
+// #define DEBUG_BULLET
+
+int bullet[MAP_RANGE_X][MAP_RANGE_Y];
 
 void InitBulletStat()
 {
@@ -12,8 +17,45 @@ void InitBulletStat()
             bullet[i][j] = BULLET_NONE;
 }
 
+#ifdef DEBUG_BULLET
+
+const char *GetDirName(enum BULLET_STAT stat)
+{
+    switch (stat)
+    {
+    case BULLET_NONE:
+        return "0";
+    case BULLET_UP:
+        return "UP";
+    case BULLET_DOWN:
+        return "DOWN";
+    case BULLET_LEFT:
+        return "LEFT";
+    case BULLET_RIGHT:
+        return "RIGHT";
+    }
+}
+
+void DisplayBullet()
+{
+    int i, j;
+    for (i = 0; i < MAP_RANGE_X; i++)
+    {
+        for (j = 0; j < MAP_RANGE_Y; j++)
+            printf("%s\t", GetDirName(bullet[j][i]));
+        printf("\n");
+    }
+}
+
+#endif
+
 void UpdateBulletStat()
 {
+#ifdef DEBUG_BULLET
+    printf("Before Update\n");
+    DisplayBullet();
+    getchar();
+#endif
     int i, j, x, y;
     for (i = 0; i < MAP_RANGE_X; i++)
     {
@@ -22,12 +64,22 @@ void UpdateBulletStat()
             bullet_old[i][j] = BULLET_NONE;
             if (map[i][j] == MAP_BULLET)
             {
+                if (bullet[i][j] == BULLET_NONE)
+                {
+                    fprintf(stderr, "error: -5\n");
+                    exit(-5);
+                }
                 bullet_old[i][j] = bullet[i][j];
-                map[i][j] == MAP_EMPTY;
+                map[i][j] = MAP_EMPTY;
             }
             bullet[i][j] = BULLET_NONE;
         }
     }
+#ifdef DEBUG_BULLET
+    printf("update bullet_old\n");
+    DisplayBullet();
+    getchar();
+#endif
     for (i = 0; i < MAP_RANGE_X; i++)
     {
         for (j = 0; j < MAP_RANGE_Y; j++)
@@ -94,6 +146,7 @@ void UpdateBulletStat()
                 if (bullet[x][y] == BULLET_NONE)
                 {
                     bullet[x][y] = bullet_old[i][j];
+                    map[x][y] = MAP_BULLET;
                 }
                 else
                 {
@@ -109,12 +162,14 @@ void UpdateBulletStat()
                 map[x][y] = MAP_BOOM;
                 break;
             case MAP_BULLET:
+                fprintf(stderr, "error: -2\n");
                 exit(-2);
             case MAP_BLOCK:
                 break;
             case MAP_BOOM:
                 break;
             default:
+                fprintf(stderr, "error: -2\n");
                 exit(-2);
             }
         }
@@ -126,4 +181,9 @@ void UpdateBulletStat()
                     bullet[i][j] = BULLET_NONE;
                 else
                     map[i][j] = MAP_BULLET;
+#ifdef DEBUG_BULLET
+    printf("update bullet\n");
+    DisplayBullet();
+    getchar();
+#endif
 }
