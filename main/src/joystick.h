@@ -1,3 +1,21 @@
+//	up	^				  3.3V
+//		|		 |  |  |   |   |
+//		|		------------------
+//		|		|sw Vy Vx 5V GND |				Vy		movement of joystick		Vx		movement of joystick
+//		|		|		  		 |				3.3V	<----						0V	       up
+//		|		|		  		 |				1.65V   hold						1.65V     hold
+//		|		|		  		 |				0V      ---->						3.3V      down
+//		|		|	  -----	  	 |
+//		|		|	  |	  |		 |
+//		|		|	  -----	  	 |
+//		|		|		  		 |
+//		|		------------------
+//	  --|--------------------------------> right
+
+
+
+
+
 #ifndef _JOYSTICK_H_
 #define _JOYSTICK_H_
 #include <p32xxxx.h>
