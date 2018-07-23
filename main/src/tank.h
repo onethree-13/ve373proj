@@ -1,7 +1,9 @@
 #ifndef _TANK_H_
 #define _TANK_H_
 #include "bullet.h"
+
 #include "game.h"
+
 #include "map.h"
 
 void InitTankStat();

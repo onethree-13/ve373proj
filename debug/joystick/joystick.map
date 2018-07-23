@@ -45,16 +45,24 @@ D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic3
 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
                               joystick.o (INTRestoreInterrupts)
 
+Allocating common symbols
+Common symbol       size              file
+
+tank1_shoot_dir     0x4               joystick.o
+tank2_shoot_dir     0x4               joystick.o
+tank1_move_dir      0x4               joystick.o
+tank2_move_dir      0x4               joystick.o
+
 Microchip PIC32 Memory-Usage Report
 
 kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-.text                   0x9d000000         0x2e5c       11868  Application's executable code 
-.rodata                 0x9d002e60           0x44          68  Read-only constant data 
-.data                   0x9d002ea4           0xf4         244  Data-initialization template 
-.sdata                  0x9d002f98            0x4           4  Small data-initialization template 
-      Total kseg0_program_mem used  :      0x2f98       12184  2.3% of 0x80000
+.text                   0x9d000000         0x3350       13136  Application's executable code 
+.rodata                 0x9d003350           0x54          84  Read-only constant data 
+.data                   0x9d0033a4           0xf4         244  Data-initialization template 
+.sdata                  0x9d003498            0x4           4  Small data-initialization template 
+      Total kseg0_program_mem used  :      0x349c       13468  2.6% of 0x80000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -76,7 +84,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception handler 
          Total kseg1_boot_mem used  :        0x20          32  2.7% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x31b0       12720  2.4% of 0x81e00
+         Total Program Memory used  :      0x36b4       14004  2.6% of 0x81e00
         --------------------------------------------------------------------------
 
 
@@ -85,12 +93,12 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .data                   0xa0000000           0xf4         244  Initialized data 
 .sdata                  0xa00000f4            0x4           4  Small initialized data 
-.sbss                   0xa00000f8           0x24          36  Small uninitialized data 
-.bss                    0xa000011c           0xac         172  Uninitialized data 
-.stack                  0xa00001c8          0x400        1024  Minimum space reserved for stack 
-         Total kseg1_data_mem used  :       0x5c8        1480  1.1% of 0x20000
+.sbss                   0xa00000f8           0x34          52  Small uninitialized data 
+.bss                    0xa000012c          0x55c        1372  Uninitialized data 
+.stack                  0xa0000688          0x400        1024  Minimum space reserved for stack 
+         Total kseg1_data_mem used  :       0xa88        2696  2.1% of 0x20000
         --------------------------------------------------------------------------
-            Total Data Memory used  :       0x5c8        1480  1.1% of 0x20000
+            Total Data Memory used  :       0xa88        2696  2.1% of 0x20000
         --------------------------------------------------------------------------
 
 Memory Configuration
@@ -431,251 +439,251 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.startup)
  .startup       0x9fc00490      0x1e0 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib/crt0.o
 
-.text           0x9d000000     0x2e5c
+.text           0x9d000000     0x3350
                 0x9d000000                _text_begin = .
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x9d000000       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib/crt0.o
- .text          0x9d000018      0xe6c joystick.o
-                0x9d000a28                main
-                0x9d000898                ADC_config
+ .text          0x9d000018     0x1360 joystick.o
+                0x9d000f1c                main
+                0x9d000d88                ADC_config
                 0x9d000018                AN_ISR
  .text.general_exception
-                0x9d000e84       0xd0 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(general-exception.o)
-                0x9d000e84                _general_exception_context
- .text.exit     0x9d000f54       0xa4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
-                0x9d000f54                exit
+                0x9d001378       0xd0 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(general-exception.o)
+                0x9d001378                _general_exception_context
+ .text.exit     0x9d001448       0xa4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+                0x9d001448                exit
  .text._filbuf_simple
-                0x9d000ff8       0x28 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
-                0x9d000ff8                _filbuf_simple
+                0x9d0014ec       0x28 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x9d0014ec                _filbuf_simple
  .text._fflush_simple
-                0x9d001020       0x68 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
-                0x9d001020                _fflush_simple
+                0x9d001514       0x68 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x9d001514                _fflush_simple
  .text._flsbuf_simple
-                0x9d001088       0xe8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
-                0x9d001088                _flsbuf_simple
+                0x9d00157c       0xe8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x9d00157c                _flsbuf_simple
  .text._fwrite_simple
-                0x9d001170       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
-                0x9d001170                _fwrite_simple
+                0x9d001664       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x9d001664                _fwrite_simple
  .text._fsync_simple
-                0x9d0011f4       0x34 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
-                0x9d0011f4                _fsync_simple
+                0x9d0016e8       0x34 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x9d0016e8                _fsync_simple
  .text._weak_pthread_mutex_init
-                0x9d001228        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001228                _weak_pthread_mutex_init
-                0x9d001228                pthread_mutex_init
+                0x9d00171c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00171c                _weak_pthread_mutex_init
+                0x9d00171c                pthread_mutex_init
  .text._weak_pthread_mutex_destroy
-                0x9d001230        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001230                _weak_pthread_mutex_destroy
-                0x9d001230                pthread_mutex_destroy
+                0x9d001724        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001724                _weak_pthread_mutex_destroy
+                0x9d001724                pthread_mutex_destroy
  .text._weak_pthread_mutex_lock
-                0x9d001238        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001238                _weak_pthread_mutex_lock
-                0x9d001238                pthread_mutex_lock
+                0x9d00172c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00172c                _weak_pthread_mutex_lock
+                0x9d00172c                pthread_mutex_lock
  .text._weak_pthread_mutex_trylock
-                0x9d001240        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001240                _weak_pthread_mutex_trylock
-                0x9d001240                pthread_mutex_trylock
+                0x9d001734        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001734                _weak_pthread_mutex_trylock
+                0x9d001734                pthread_mutex_trylock
  .text._weak_pthread_mutex_unlock
-                0x9d001248        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001248                _weak_pthread_mutex_unlock
-                0x9d001248                pthread_mutex_unlock
+                0x9d00173c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00173c                _weak_pthread_mutex_unlock
+                0x9d00173c                pthread_mutex_unlock
  .text._weak_pthread_mutex_setname_np
-                0x9d001250        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001250                pthread_mutex_setname_np
-                0x9d001250                _weak_pthread_mutex_setname_np
+                0x9d001744        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001744                pthread_mutex_setname_np
+                0x9d001744                _weak_pthread_mutex_setname_np
  .text._weak_pthread_mutexattr_init
-                0x9d001258        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001258                _weak_pthread_mutexattr_init
-                0x9d001258                pthread_mutexattr_init
+                0x9d00174c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00174c                _weak_pthread_mutexattr_init
+                0x9d00174c                pthread_mutexattr_init
  .text._weak_pthread_mutexattr_destroy
-                0x9d001260        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001260                pthread_mutexattr_destroy
-                0x9d001260                _weak_pthread_mutexattr_destroy
+                0x9d001754        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001754                pthread_mutexattr_destroy
+                0x9d001754                _weak_pthread_mutexattr_destroy
  .text._weak_pthread_mutexattr_setname_np
-                0x9d001268        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001268                _weak_pthread_mutexattr_setname_np
-                0x9d001268                pthread_mutexattr_setname_np
+                0x9d00175c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00175c                _weak_pthread_mutexattr_setname_np
+                0x9d00175c                pthread_mutexattr_setname_np
  .text._weak_pthread_mutexattr_settype_np
-                0x9d001270        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001270                _weak_pthread_mutexattr_settype_np
-                0x9d001270                pthread_mutexattr_settype_np
+                0x9d001764        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001764                _weak_pthread_mutexattr_settype_np
+                0x9d001764                pthread_mutexattr_settype_np
  .text._weak_pthread_sysconf_np
-                0x9d001278        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001278                _weak_pthread_sysconf_np
-                0x9d001278                pthread_sysconf_np
+                0x9d00176c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00176c                _weak_pthread_sysconf_np
+                0x9d00176c                pthread_sysconf_np
  .text._weak_pthread_sigdisable_np
-                0x9d001280        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001280                _weak_pthread_sigdisable_np
-                0x9d001280                pthread_sigdisable_np
+                0x9d001774        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001774                _weak_pthread_sigdisable_np
+                0x9d001774                pthread_sigdisable_np
  .text._weak_pthread_sigrestore_np
-                0x9d001288        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001288                pthread_sigrestore_np
-                0x9d001288                _weak_pthread_sigrestore_np
+                0x9d00177c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00177c                pthread_sigrestore_np
+                0x9d00177c                _weak_pthread_sigrestore_np
  .text._weak__pthread_cleanup_push
-                0x9d001290        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001290                _weak__pthread_cleanup_push
-                0x9d001290                _pthread_cleanup_push
+                0x9d001784        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001784                _weak__pthread_cleanup_push
+                0x9d001784                _pthread_cleanup_push
  .text._weak__pthread_cleanup_pop
-                0x9d001298        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d001298                _pthread_cleanup_pop
-                0x9d001298                _weak__pthread_cleanup_pop
+                0x9d00178c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00178c                _pthread_cleanup_pop
+                0x9d00178c                _weak__pthread_cleanup_pop
  .text._weak__pthread_cleanup_push_defer
-                0x9d0012a0        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012a0                _weak__pthread_cleanup_push_defer
-                0x9d0012a0                _pthread_cleanup_push_defer
+                0x9d001794        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d001794                _weak__pthread_cleanup_push_defer
+                0x9d001794                _pthread_cleanup_push_defer
  .text._weak__pthread_cleanup_pop_restore
-                0x9d0012a8        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012a8                _pthread_cleanup_pop_restore
-                0x9d0012a8                _weak__pthread_cleanup_pop_restore
+                0x9d00179c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d00179c                _pthread_cleanup_pop_restore
+                0x9d00179c                _weak__pthread_cleanup_pop_restore
  .text._weak_pthread_once
-                0x9d0012b0       0x2c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012b0                _weak_pthread_once
-                0x9d0012b0                pthread_once
-                0x9d0012b0                _pthread_once
+                0x9d0017a4       0x2c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d0017a4                _weak_pthread_once
+                0x9d0017a4                pthread_once
+                0x9d0017a4                _pthread_once
  .text._weak_pthread_key_create
-                0x9d0012dc        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012dc                pthread_key_create
-                0x9d0012dc                _weak_pthread_key_create
+                0x9d0017d0        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d0017d0                pthread_key_create
+                0x9d0017d0                _weak_pthread_key_create
  .text._weak_pthread_setspecific
-                0x9d0012e4        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012e4                _weak_pthread_setspecific
-                0x9d0012e4                pthread_setspecific
+                0x9d0017d8        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d0017d8                _weak_pthread_setspecific
+                0x9d0017d8                pthread_setspecific
  .text._weak_pthread_getspecific
-                0x9d0012ec        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012ec                pthread_getspecific
-                0x9d0012ec                _weak_pthread_getspecific
+                0x9d0017e0        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d0017e0                pthread_getspecific
+                0x9d0017e0                _weak_pthread_getspecific
  .text._weak__libc_private_storage
-                0x9d0012f4        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0x9d0012f4                _libc_private_storage
-                0x9d0012f4                _weak__libc_private_storage
+                0x9d0017e8        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x9d0017e8                _libc_private_storage
+                0x9d0017e8                _weak__libc_private_storage
  .text._general_exception_handler
-                0x9d0012fc        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
-                0x9d0012fc                _general_exception_handler
+                0x9d0017f0        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+                0x9d0017f0                _general_exception_handler
  .text._bootstrap_exception_handler
-                0x9d001304        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
-                0x9d001304                _bootstrap_exception_handler
+                0x9d0017f8        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+                0x9d0017f8                _bootstrap_exception_handler
  .text._on_reset
-                0x9d00130c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
-                0x9d00130c                _on_reset
+                0x9d001800        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+                0x9d001800                _on_reset
  .text._on_bootstrap
-                0x9d001314        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
-                0x9d001314                _on_bootstrap
- .text          0x9d00131c       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-nmi-handler.o)
-                0x9d00131c                _nmi_handler
+                0x9d001808        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+                0x9d001808                _on_bootstrap
+ .text          0x9d001810       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-nmi-handler.o)
+                0x9d001810                _nmi_handler
  .text._mon_getc
-                0x9d001334        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
-                0x9d001334                _mon_getc
+                0x9d001828        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+                0x9d001828                _mon_getc
  .text._mon_write
-                0x9d00133c       0x4c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
-                0x9d00133c                _mon_write
- .text._exit    0x9d001388        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
-                0x9d001388                _exit
+                0x9d001830       0x4c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+                0x9d001830                _mon_write
+ .text._exit    0x9d00187c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+                0x9d00187c                _exit
  .text._mon_putc
-                0x9d001390       0x28 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
-                0x9d001390                _mon_putc
- .text          0x9d0013b8     0x1128 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libm.a(dp32.o)
-                0x9d002468                fabs
-                0x9d00232c                __eqdf2
-                0x9d00232c                __gtdf2
-                0x9d0013b8                dpsub
-                0x9d001fc0                __floatsidf
-                0x9d00232c                __ltdf2
-                0x9d002034                ultodp
-                0x9d0017e4                dpmul
-                0x9d002128                dptofp
-                0x9d0022a8                __fixunsdfsi
-                0x9d00232c                dpcmp
-                0x9d002084                __extendsfdf2
-                0x9d0013c0                __adddf3
-                0x9d0022a8                dptoul
-                0x9d001b0c                dpdiv
-                0x9d001fc0                litodp
-                0x9d002220                __fixdfsi
-                0x9d00232c                __ledf2
-                0x9d002084                fptodp
-                0x9d002450                __negdf2
-                0x9d0013c0                dpadd
-                0x9d001b0c                __divdf3
-                0x9d0017e4                __muldf3
-                0x9d002128                __truncdfsf2
-                0x9d00232c                __nedf2
-                0x9d002220                dptoli
-                0x9d002484                nan
-                0x9d002468                dpfabs
-                0x9d00232c                __gedf2
-                0x9d002484                dpnan
-                0x9d0013b8                __subdf3
- .text          0x9d0024e0      0x8ec D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libm.a(fp32.o)
-                0x9d00290c                __divsf3
-                0x9d002b38                sitofp
-                0x9d002be0                __fixsfsi
-                0x9d00290c                fpdiv
-                0x9d0024e0                __subsf3
-                0x9d002be0                fptoli
-                0x9d002ccc                __lesf2
-                0x9d002d60                fabsf
-                0x9d002ccc                __nesf2
-                0x9d002b94                uitofp
-                0x9d002ccc                __gtsf2
-                0x9d002c58                fptoui
-                0x9d002d60                fpfabs
-                0x9d002b38                __floatsisf
-                0x9d002be0                fptosi
-                0x9d002d80                fpnan
-                0x9d002ccc                __eqsf2
-                0x9d0024e8                fpadd
-                0x9d002d70                __negsf2
-                0x9d002ccc                __ltsf2
-                0x9d0024e0                fpsub
-                0x9d002ccc                fpcmp
-                0x9d002754                __mulsf3
-                0x9d002ccc                __gesf2
-                0x9d002d80                nanf
-                0x9d002b38                litofp
-                0x9d002754                fpmul
-                0x9d002c58                __fixunssfsi
-                0x9d0024e8                __addsf3
-                0x9d002c58                fptoul
-                0x9d002b94                ultofp
+                0x9d001884       0x28 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+                0x9d001884                _mon_putc
+ .text          0x9d0018ac     0x1128 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libm.a(dp32.o)
+                0x9d00295c                fabs
+                0x9d002820                __eqdf2
+                0x9d002820                __gtdf2
+                0x9d0018ac                dpsub
+                0x9d0024b4                __floatsidf
+                0x9d002820                __ltdf2
+                0x9d002528                ultodp
+                0x9d001cd8                dpmul
+                0x9d00261c                dptofp
+                0x9d00279c                __fixunsdfsi
+                0x9d002820                dpcmp
+                0x9d002578                __extendsfdf2
+                0x9d0018b4                __adddf3
+                0x9d00279c                dptoul
+                0x9d002000                dpdiv
+                0x9d0024b4                litodp
+                0x9d002714                __fixdfsi
+                0x9d002820                __ledf2
+                0x9d002578                fptodp
+                0x9d002944                __negdf2
+                0x9d0018b4                dpadd
+                0x9d002000                __divdf3
+                0x9d001cd8                __muldf3
+                0x9d00261c                __truncdfsf2
+                0x9d002820                __nedf2
+                0x9d002714                dptoli
+                0x9d002978                nan
+                0x9d00295c                dpfabs
+                0x9d002820                __gedf2
+                0x9d002978                dpnan
+                0x9d0018ac                __subdf3
+ .text          0x9d0029d4      0x8ec D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libm.a(fp32.o)
+                0x9d002e00                __divsf3
+                0x9d00302c                sitofp
+                0x9d0030d4                __fixsfsi
+                0x9d002e00                fpdiv
+                0x9d0029d4                __subsf3
+                0x9d0030d4                fptoli
+                0x9d0031c0                __lesf2
+                0x9d003254                fabsf
+                0x9d0031c0                __nesf2
+                0x9d003088                uitofp
+                0x9d0031c0                __gtsf2
+                0x9d00314c                fptoui
+                0x9d003254                fpfabs
+                0x9d00302c                __floatsisf
+                0x9d0030d4                fptosi
+                0x9d003274                fpnan
+                0x9d0031c0                __eqsf2
+                0x9d0029dc                fpadd
+                0x9d003264                __negsf2
+                0x9d0031c0                __ltsf2
+                0x9d0029d4                fpsub
+                0x9d0031c0                fpcmp
+                0x9d002c48                __mulsf3
+                0x9d0031c0                __gesf2
+                0x9d003274                nanf
+                0x9d00302c                litofp
+                0x9d002c48                fpmul
+                0x9d00314c                __fixunssfsi
+                0x9d0029dc                __addsf3
+                0x9d00314c                fptoul
+                0x9d003088                ultofp
  .text.CheKseg0CacheOff
-                0x9d002dcc       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
-                0x9d002dcc                CheKseg0CacheOff
+                0x9d0032c0       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+                0x9d0032c0                CheKseg0CacheOff
  .text.CheKseg0CacheOn
-                0x9d002de4       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
-                0x9d002de4                CheKseg0CacheOn
+                0x9d0032d8       0x18 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+                0x9d0032d8                CheKseg0CacheOn
  .text.INTConfigureSystem
-                0x9d002dfc       0x34 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
-                0x9d002dfc                INTConfigureSystem
+                0x9d0032f0       0x34 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
+                0x9d0032f0                INTConfigureSystem
  .text.INTEnableInterrupts
-                0x9d002e30        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
-                0x9d002e30                INTEnableInterrupts
+                0x9d003324        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
+                0x9d003324                INTEnableInterrupts
  .text.INTDisableInterrupts
-                0x9d002e38        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
-                0x9d002e38                INTDisableInterrupts
+                0x9d00332c        0x8 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+                0x9d00332c                INTDisableInterrupts
  .text.INTRestoreInterrupts
-                0x9d002e40       0x1c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
-                0x9d002e40                INTRestoreInterrupts
+                0x9d003334       0x1c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+                0x9d003334                INTRestoreInterrupts
  *(.text.*personality*)
  *(.gnu.warning)
  *(.mips16.fn.*)
  *(.mips16.call.*)
-                0x9d002e5c                _text_end = .
+                0x9d003350                _text_end = .
 
-.rodata         0x9d002e60       0x44
+.rodata         0x9d003350       0x54
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x9d002e60       0x30 joystick.o
- .rodata        0x9d002e90       0x14 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
-                0x9d002e90                _io_funcs
+ .rodata        0x9d003350       0x40 joystick.o
+ .rodata        0x9d003390       0x14 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
+                0x9d003390                _io_funcs
  *(.rodata1)
-                0x9d002ea4                . = ALIGN (0x4)
+                0x9d0033a4                . = ALIGN (0x4)
 
-.sdata2         0x9d002ea4        0x0
+.sdata2         0x9d0033a4        0x0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x9d002ea4                . = ALIGN (0x4)
+                0x9d0033a4                . = ALIGN (0x4)
 
-.sbss2          0x9d002ea4        0x0
+.sbss2          0x9d0033a4        0x0
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
-                0x9d002ea4                . = ALIGN (0x4)
+                0x9d0033a4                . = ALIGN (0x4)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -686,7 +694,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
 .dbg_data       0xa0000000        0x0
                 0xa0000000                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
 
-.data           0xa0000000       0xf4 load address 0x9d002ea4
+.data           0xa0000000       0xf4 load address 0x9d0033a4
                 0xa0000000                _data_begin = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data          0xa0000000       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
@@ -694,7 +702,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  .data          0xa0000020       0xd4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
  *(.gnu.linkonce.d.*personality*)
  *(.data1)
-                0x9d002ea4                _data_image_begin = LOADADDR (.data)
+                0x9d0033a4                _data_image_begin = LOADADDR (.data)
 
 .eh_frame
  *(.eh_frame)
@@ -704,7 +712,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.got.plt)
  *(.got)
 
-.sdata          0xa00000f4        0x4 load address 0x9d002f98
+.sdata          0xa00000f4        0x4 load address 0x9d003498
                 0xa00000f4                _sdata_begin = .
  *(.sdata .sdata.* .gnu.linkonce.s.*)
  .sdata         0xa00000f4        0x4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
@@ -720,55 +728,53 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
                 0xa00000f8                _data_end = .
                 0xa00000f8                _bss_begin = .
 
-.sbss           0xa00000f8       0x24
+.sbss           0xa00000f8       0x34
                 0xa00000f8                _sbss_begin = .
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
  .sbss          0xa00000f8       0x20 joystick.o
-                0xa0000110                tank2_shoot_x
-                0xa0000100                tank1_shoot_x
-                0xa0000104                tank1_shoot_y
-                0xa0000114                tank2_shoot_y
-                0xa00000f8                tank1_dir_x
-                0xa00000fc                tank1_dir_y
-                0xa0000108                tank2_dir_x
-                0xa000010c                tank2_dir_y
  .sbss          0xa0000118        0x4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(errno.o)
                 0xa0000118                errno
  *(.scommon)
-                0xa000011c                _sbss_end = .
+ .scommon       0xa000011c       0x10 joystick.o
+                0xa000011c                tank1_shoot_dir
+                0xa0000120                tank2_shoot_dir
+                0xa0000124                tank1_move_dir
+                0xa0000128                tank2_move_dir
+                0xa000012c                _sbss_end = .
 
-.bss            0xa000011c       0xac
+.bss            0xa000012c      0x55c
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0xa000011c       0x88 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
- .bss           0xa00001a4       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .bss           0xa00001c4        0x4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
-                0xa00001c4                __isthreaded
+ .bss           0xa000012c      0x4b0 joystick.o
+ .bss           0xa00005dc       0x88 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
+ .bss           0xa0000664       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .bss           0xa0000684        0x4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0xa0000684                __isthreaded
  *(COMMON)
-                0xa00001c8                . = ALIGN (0x4)
-                0xa00001c8                . = ALIGN (0x4)
-                0xa00001c8                _end = .
-                0xa00001c8                _bss_end = .
+                0xa0000688                . = ALIGN (0x4)
+                0xa0000688                . = ALIGN (0x4)
+                0xa0000688                _end = .
+                0xa0000688                _bss_end = .
 
-.heap           0xa00001c8        0x0
-                0xa00001c8                _heap = .
-                0xa00001c8                . = (. + _min_heap_size)
+.heap           0xa0000688        0x0
+                0xa0000688                _heap = .
+                0xa0000688                . = (. + _min_heap_size)
 
-.stack          0xa00001c8      0x400
-                0xa00001c8                _splim = .
-                0xa00001c8                _SPLIM = .
-                0xa00005c8                . = (. + _min_stack_size)
- *fill*         0xa00001c8      0x400 00
+.stack          0xa0000688      0x400
+                0xa0000688                _splim = .
+                0xa0000688                _SPLIM = .
+                0xa0000a88                . = (. + _min_stack_size)
+ *fill*         0xa0000688      0x400 00
 
-.ramfunc        0xa0000800        0x0 load address 0x9d002f9c
-                0xa0000800                _ramfunc_begin = .
+.ramfunc        0xa0001000        0x0 load address 0x9d00349c
+                0xa0001000                _ramfunc_begin = .
  *(.ramfunc .ramfunc.*)
-                0xa0000800                . = ALIGN (0x4)
-                0xa0000800                _ramfunc_end = .
-                0x9d002f9c                _ramfunc_image_begin = LOADADDR (.ramfunc)
+                0xa0001000                . = ALIGN (0x4)
+                0xa0001000                _ramfunc_end = .
+                0x9d00349c                _ramfunc_image_begin = LOADADDR (.ramfunc)
                 0x00000000                _ramfunc_length = SIZEOF (.ramfunc)
-                0x00000800                _bmxdkpba_address = (_ramfunc_begin - 0xa0000000)
+                0x00001000                _bmxdkpba_address = (_ramfunc_begin - 0xa0000000)
                 0x00020000                _bmxdudba_address = 0x20000
                 0x00020000                _bmxdupba_address = 0x20000
                 0xa0020000                _stack = (_ramfunc_length > 0x0)?(_ramfunc_begin - 0x4):0xa0020000
@@ -891,104 +897,104 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
                 0x00000348       0x28 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
 .debug_pubnames
-                0x00000000      0x62b
+                0x00000000      0x5f1
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0xbd joystick.o
+                0x00000000       0x83 joystick.o
  .debug_pubnames
-                0x000000bd       0x1b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+                0x00000083       0x1b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
  .debug_pubnames
-                0x000000d8       0x70 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+                0x0000009e       0x70 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
  .debug_pubnames
-                0x00000148      0x2da D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+                0x0000010e      0x2da D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
  .debug_pubnames
-                0x00000422       0x31 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+                0x000003e8       0x31 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
  .debug_pubnames
-                0x00000453       0x33 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+                0x00000419       0x33 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
  .debug_pubnames
-                0x00000486       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+                0x0000044c       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
  .debug_pubnames
-                0x000004a6       0x24 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+                0x0000046c       0x24 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
  .debug_pubnames
-                0x000004ca       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+                0x00000490       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
  .debug_pubnames
-                0x000004ea       0x21 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+                0x000004b0       0x21 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
  .debug_pubnames
-                0x0000050b       0x1c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+                0x000004d1       0x1c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
  .debug_pubnames
-                0x00000527       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+                0x000004ed       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
  .debug_pubnames
-                0x00000547       0x3b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+                0x0000050d       0x3b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
  .debug_pubnames
-                0x00000582       0x29 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
+                0x00000548       0x29 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
  .debug_pubnames
-                0x000005ab       0x2a D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
+                0x00000571       0x2a D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
  .debug_pubnames
-                0x000005d5       0x2b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+                0x0000059b       0x2b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
  .debug_pubnames
-                0x00000600       0x2b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+                0x000005c6       0x2b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
-.debug_info     0x00000000     0x1269
+.debug_info     0x00000000     0x13cc
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0xd95 joystick.o
- .debug_info    0x00000d95       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
- .debug_info    0x00000dc5       0x78 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .debug_info    0x00000e3d      0x1aa D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
- .debug_info    0x00000fe7       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
- .debug_info    0x00001017       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
- .debug_info    0x00001047       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
- .debug_info    0x00001077       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
- .debug_info    0x000010a7       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
- .debug_info    0x000010d7       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
- .debug_info    0x00001107       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
- .debug_info    0x00001137       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
- .debug_info    0x00001167       0x42 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
- .debug_info    0x000011a9       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
- .debug_info    0x000011d9       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
- .debug_info    0x00001209       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
- .debug_info    0x00001239       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+ .debug_info    0x00000000      0xef8 joystick.o
+ .debug_info    0x00000ef8       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+ .debug_info    0x00000f28       0x78 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .debug_info    0x00000fa0      0x1aa D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+ .debug_info    0x0000114a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+ .debug_info    0x0000117a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x000011aa       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+ .debug_info    0x000011da       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+ .debug_info    0x0000120a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+ .debug_info    0x0000123a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+ .debug_info    0x0000126a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+ .debug_info    0x0000129a       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+ .debug_info    0x000012ca       0x42 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+ .debug_info    0x0000130c       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
+ .debug_info    0x0000133c       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
+ .debug_info    0x0000136c       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+ .debug_info    0x0000139c       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
-.debug_abbrev   0x00000000      0x461
+.debug_abbrev   0x00000000      0x4a8
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x22f joystick.o
- .debug_abbrev  0x0000022f       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
- .debug_abbrev  0x00000252        0x1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
- .debug_abbrev  0x00000253       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .debug_abbrev  0x00000276       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
- .debug_abbrev  0x00000299       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
- .debug_abbrev  0x000002bc       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x000002df       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
- .debug_abbrev  0x00000302       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
- .debug_abbrev  0x00000325       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
- .debug_abbrev  0x00000348       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
- .debug_abbrev  0x0000036b       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
- .debug_abbrev  0x0000038e        0x1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(errno.o)
- .debug_abbrev  0x0000038f       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
- .debug_abbrev  0x000003b2       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
- .debug_abbrev  0x000003d5       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
- .debug_abbrev  0x000003f8       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
- .debug_abbrev  0x0000041b       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
- .debug_abbrev  0x0000043e       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+ .debug_abbrev  0x00000000      0x276 joystick.o
+ .debug_abbrev  0x00000276       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+ .debug_abbrev  0x00000299        0x1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
+ .debug_abbrev  0x0000029a       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .debug_abbrev  0x000002bd       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+ .debug_abbrev  0x000002e0       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+ .debug_abbrev  0x00000303       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00000326       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+ .debug_abbrev  0x00000349       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+ .debug_abbrev  0x0000036c       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+ .debug_abbrev  0x0000038f       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+ .debug_abbrev  0x000003b2       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+ .debug_abbrev  0x000003d5        0x1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(errno.o)
+ .debug_abbrev  0x000003d6       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+ .debug_abbrev  0x000003f9       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+ .debug_abbrev  0x0000041c       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
+ .debug_abbrev  0x0000043f       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
+ .debug_abbrev  0x00000462       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+ .debug_abbrev  0x00000485       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
-.debug_line     0x00000000      0xc48
+.debug_line     0x00000000      0xcbb
  *(.debug_line)
- .debug_line    0x00000000      0x34b joystick.o
- .debug_line    0x0000034b       0x7d D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
- .debug_line    0x000003c8       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .debug_line    0x0000044c       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
- .debug_line    0x000004cc       0x9c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
- .debug_line    0x00000568       0x9e D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00000606       0x8b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
- .debug_line    0x00000691       0x8f D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
- .debug_line    0x00000720       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
- .debug_line    0x000007a4       0x85 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
- .debug_line    0x00000829       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
- .debug_line    0x000008a9       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
- .debug_line    0x0000092d       0x92 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
- .debug_line    0x000009bf       0xa1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
- .debug_line    0x00000a60       0xa2 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
- .debug_line    0x00000b02       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
- .debug_line    0x00000ba5       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+ .debug_line    0x00000000      0x3be joystick.o
+ .debug_line    0x000003be       0x7d D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+ .debug_line    0x0000043b       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .debug_line    0x000004bf       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+ .debug_line    0x0000053f       0x9c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+ .debug_line    0x000005db       0x9e D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x00000679       0x8b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+ .debug_line    0x00000704       0x8f D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+ .debug_line    0x00000793       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+ .debug_line    0x00000817       0x85 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+ .debug_line    0x0000089c       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+ .debug_line    0x0000091c       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+ .debug_line    0x000009a0       0x92 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(pcache.o)
+ .debug_line    0x00000a32       0xa1 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_configure_system_lib.o)
+ .debug_line    0x00000ad3       0xa2 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_enable_interrupts_lib.o)
+ .debug_line    0x00000b75       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+ .debug_line    0x00000c18       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
 .debug_frame    0x00000000      0x484
  *(.debug_frame)
@@ -1068,6 +1074,6 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.note.GNU-stack)
 OUTPUT(joystick.elf elf32-tradlittlemips)
 
-.mdebug.abi32   0x9d002f9c        0x0
+.mdebug.abi32   0x9d00349c        0x0
 
-.rel.dyn        0x9d002f9c        0x0
+.rel.dyn        0x9d00349c        0x0
