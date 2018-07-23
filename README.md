@@ -1,4 +1,4 @@
-# Ve373 project Battle of Tanks
+﻿# Ve373 project Battle of Tanks
 ### Tree Structure
 
 ```bash
@@ -6,6 +6,7 @@
 │  ├─joystick
 │  ├─LCD
 │  ├─LED
+│  ├─motor
 │  └─src
 └─main
     └─src
@@ -29,7 +30,7 @@ Tianhong Shen
 Qianyong Tang
 
 - joystick debug & test program (deadline July 29th)
-- LED debug & test program (deadline July 29th)
+- motor debug & test program (deadline July 29th)
 
 Yiming WU
 
