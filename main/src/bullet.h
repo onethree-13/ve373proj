@@ -5,7 +5,7 @@
 #include "tank.h"
 #include "game.h"
 
-static int bullet[MAP_RANGE_X][MAP_RANGE_Y];
+extern int bullet[MAP_RANGE_X][MAP_RANGE_Y];
 static int bullet_old[MAP_RANGE_X][MAP_RANGE_Y];
 
 void InitBulletStat();
