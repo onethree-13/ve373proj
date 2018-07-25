@@ -22,7 +22,7 @@ void InitTankStat()
     tank2.shoot_dir = SHOOT_UP;
     tank2.stat = HEALTHY;
     map[tank2.x][tank2.y] = MAP_TANK2;
-    tank2.HP = INITIAL_HP;    
+    tank2.HP = INITIAL_HP;
 }
 
 void TankMove(int num)
@@ -78,50 +78,46 @@ void TankMove(int num)
         map[tanka->x][tanka->y] = MAP_EMPTY;
         tanka->x = x;
         tanka->y = y;
-        if (num == 1)
-            map[tanka->x][tanka->y] = MAP_TANK1;
-        else
-            map[tanka->x][tanka->y] = MAP_TANK2;
+        map[tanka->x][tanka->y] = (num == 1) ? MAP_TANK1 : MAP_TANK2;
         break;
     case MAP_TANK1:
         if (num == 2)
         {
-            tanka->stat = EXPLODE;
-            tankb->stat = EXPLODE;
-            map[tanka->x][tanka->y] = MAP_BOOM;
-            map[x][y] = MAP_BOOM;
+            TakeDamage(tanka, CRUSHING_DMG);
+            TakeDamage(tankb, CRUSHED_DMG);
             break;
         }
         else
         {
+            fprintf(stderr, "error: -3\n");
             exit(-3);
         }
     case MAP_TANK2:
         if (num == 1)
         {
-            tanka->stat = EXPLODE;
-            tankb->stat = EXPLODE;
-            map[tanka->x][tanka->y] = MAP_BOOM;
-            map[x][y] = MAP_BOOM;
+            TakeDamage(tanka, CRUSHING_DMG);
+            TakeDamage(tankb, CRUSHED_DMG);
             break;
         }
         else
         {
+            fprintf(stderr, "error: -3\n");
             exit(-3);
         }
     case MAP_BULLET:
-        tanka->stat = EXPLODE;
-        map[tanka->x][tanka->y] = MAP_BOOM;
-        map[x][y] = MAP_BOOM;
+        map[tanka->x][tanka->y] = MAP_EMPTY;
+        tanka->x = x;
+        tanka->y = y;
+        map[tanka->x][tanka->y] = (num == 1) ? MAP_TANK1 : MAP_TANK2;
+        TakeDamage(tankb, BULLET_DMG);
         break;
     case MAP_BLOCK:
         break;
     case MAP_BOOM:
-        tanka->stat = EXPLODE;
-        map[tanka->x][tanka->y] = MAP_EMPTY;
-        tanka->x = x;
-        tanka->y = y;
+        fprintf(stderr, "error: -3\n");
+        exit(-3);
     default:
+        fprintf(stderr, "error: -3\n");
         exit(-3);
     }
 }
@@ -193,12 +189,10 @@ void TankShoot(int num)
         }
         break;
     case MAP_TANK1:
-        map[x][y] = MAP_BOOM;
-        tank1.stat = EXPLODE;
+        TakeDamage(&tank1,BULLET_DMG);
         break;
     case MAP_TANK2:
-        map[x][y] = MAP_BOOM;
-        tank2.stat = EXPLODE;
+        TakeDamage(&tank2,BULLET_DMG);
         break;
     case MAP_BULLET:
         map[x][y] = MAP_BOOM;
@@ -210,5 +204,14 @@ void TankShoot(int num)
     default:
         fprintf(stderr, "error: -4\n");
         exit(-4);
+    }
+}
+
+void TakeDamage(tank *tanka, int damage)
+{
+    tanka->HP -= damage;
+    if (tanka->HP <= 0)
+    {
+        tanka->stat = EXPLODE;
     }
 }

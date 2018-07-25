@@ -3,11 +3,11 @@
 #include "bullet.h"
 #include "game.h"
 #include "map.h"
-#define INITIAL_HP 5
-
-void InitTankStat();
-void TankMove(int num);
-void TankShoot(int num);
+#define INITIAL_HP 3
+#define BULLET_DMG 1
+#define CRUSHING_DMG 1
+#define CRUSHED_DMG 3
+#define WALL_DMG 3
 
 typedef struct
 {
@@ -43,5 +43,10 @@ enum SHOOT_DIR
     SHOOT_LEFT,
     SHOOT_RIGHT
 };
+
+void InitTankStat();
+void TankMove(int num);
+void TankShoot(int num);
+void TakeDamage(tank* tanka, int damage);
 
 #endif

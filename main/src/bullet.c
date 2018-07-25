@@ -145,12 +145,10 @@ void UpdateBulletStat()
                 }
                 break;
             case MAP_TANK1:
-                tank1.stat = EXPLODE;
-                map[x][y] = MAP_BOOM;
+                TakeDamage(&tank1, BULLET_DMG);
                 break;
             case MAP_TANK2:
-                tank2.stat = EXPLODE;
-                map[x][y] = MAP_BOOM;
+                TakeDamage(&tank2, BULLET_DMG);
                 break;
             case MAP_BULLET:
                 map[x][y] = MAP_BOOM;
