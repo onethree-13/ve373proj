@@ -22,10 +22,7 @@ void InitTankStat()
     tank2.shoot_dir = SHOOT_UP;
     tank2.stat = HEALTHY;
     map[tank2.x][tank2.y] = MAP_TANK2;
-//<<<<<<< HEAD
-//=======
-    tank2.HP = INITIAL_HP;    
-//>>>>>>> 97bf9e950044f9296b94aa47243163fd775d5174
+    tank2.HP = INITIAL_HP;
 }
 
 void TankMove(int num)
@@ -192,10 +189,10 @@ void TankShoot(int num)
         }
         break;
     case MAP_TANK1:
-        TakeDamage(&tank1,BULLET_DMG);
+        TakeDamage(&tank1, BULLET_DMG);
         break;
     case MAP_TANK2:
-        TakeDamage(&tank2,BULLET_DMG);
+        TakeDamage(&tank2, BULLET_DMG);
         break;
     case MAP_BULLET:
         map[x][y] = MAP_BOOM;
