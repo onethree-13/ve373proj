@@ -22,7 +22,14 @@ void InitTankStat()
     tank2.shoot_dir = SHOOT_UP;
     tank2.stat = HEALTHY;
     map[tank2.x][tank2.y] = MAP_TANK2;
+<<<<<<< HEAD
     tank2.HP = INITIAL_HP;
+=======
+//<<<<<<< HEAD
+//=======
+    tank2.HP = INITIAL_HP;    
+//>>>>>>> 97bf9e950044f9296b94aa47243163fd775d5174
+>>>>>>> 3f7b970e7bb1819661119b11aaee55bb2ce2aa17
 }
 
 void TankMove(int num)

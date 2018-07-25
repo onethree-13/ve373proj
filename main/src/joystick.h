@@ -24,7 +24,7 @@
 #define _JOYSTICK_H_
 #include <p32xxxx.h>
 #include <plib.h>
-#include "E:\ve373proj\main\src\tank.h"
+#include "tank.h"
 
 void ADC_config(void);
 
@@ -137,11 +137,12 @@ void ADC_config(void)
     AD1CON1bits.ON = 1; //turn on ADC moodule
 }
 
-void UpdateTankDir()
-{
-    tank1.move_dir = tank1_move_dir;
-    tank2.shoot_dir = tank2_move_dir;
-    tank1.move_dir = tank1_shoot_dir;
-    tank2.shoot_dir = tank2_shoot_dir;
-}
+//void UpdateTankDir()
+//{
+//    tank1.move_dir = tank1_move_dir;
+//    tank2.shoot_dir = tank2_move_dir;
+//    tank1.move_dir = tank1_shoot_dir;
+//    tank2.shoot_dir = tank2_shoot_dir;
+//}
+
 #endif
