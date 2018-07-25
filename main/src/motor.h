@@ -18,16 +18,16 @@ int js1_move_pwm=0;
 int js2_move_pwm=0;
 int js1_shoot_pwm=0;
 int js2_shoot_pwm=0;
-//unsigned int acc = 30;
+//unsigned int acc = 5;
 
 #pragma interrupt PWM_ISR ipl5 vector 8
 void PWM_ISR (void) {
 //OC1RS = js1_move_pwm; //update duty cycle register
 //js1_move_pwm = js1_move_pwm + acc;
 //if (js1_move_pwm<0) {js1_move_pwm = 0;acc=-acc;}
-//else if (js1_move_pwm>FULL_PWM/20) {js1_move_pwm = FULL_PWM/20;acc=-acc;}
+//else if (js1_move_pwm>FULL_PWM/5) {js1_move_pwm = FULL_PWM/5;acc=-acc;}
 
-js1_move_pwm=FULL_PWM/20;
+js1_move_pwm=FULL_PWM/5;
 OC1RS = js1_move_pwm; //update duty cycle register
 OC2RS = js1_shoot_pwm; //update duty cycle register
 OC3RS = js2_move_pwm; //update duty cycle register

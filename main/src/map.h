@@ -6,12 +6,14 @@
 
 void InitMapStat();
 void UpdateMapStat();
+void MapTransform();
 
 #define MAP_RANGE_X 10
 #define MAP_RANGE_Y 10
 #define MAP_MAX 100
 
 extern int map[MAP_RANGE_X][MAP_RANGE_Y];
+static int transform_counter;
 
 enum MAP_STAT
 {

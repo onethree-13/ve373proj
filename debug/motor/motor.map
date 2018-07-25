@@ -819,22 +819,22 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  .debug_pubnames
                 0x00000531       0x2b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
-.debug_info     0x00000000      0xfc8
+.debug_info     0x00000000      0xfdf
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0xb96 motor.o
- .debug_info    0x00000b96       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
- .debug_info    0x00000bc6       0x78 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .debug_info    0x00000c3e      0x1aa D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
- .debug_info    0x00000de8       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
- .debug_info    0x00000e18       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
- .debug_info    0x00000e48       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
- .debug_info    0x00000e78       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
- .debug_info    0x00000ea8       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
- .debug_info    0x00000ed8       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
- .debug_info    0x00000f08       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
- .debug_info    0x00000f38       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
- .debug_info    0x00000f68       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
- .debug_info    0x00000f98       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+ .debug_info    0x00000000      0xbad motor.o
+ .debug_info    0x00000bad       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+ .debug_info    0x00000bdd       0x78 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .debug_info    0x00000c55      0x1aa D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+ .debug_info    0x00000dff       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+ .debug_info    0x00000e2f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x00000e5f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+ .debug_info    0x00000e8f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+ .debug_info    0x00000ebf       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+ .debug_info    0x00000eef       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+ .debug_info    0x00000f1f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+ .debug_info    0x00000f4f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+ .debug_info    0x00000f7f       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+ .debug_info    0x00000faf       0x30 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
 .debug_abbrev   0x00000000      0x3af
  *(.debug_abbrev)
@@ -855,22 +855,22 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  .debug_abbrev  0x00000369       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
  .debug_abbrev  0x0000038c       0x23 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
-.debug_line     0x00000000      0x9c1
+.debug_line     0x00000000      0x9d8
  *(.debug_line)
- .debug_line    0x00000000      0x299 motor.o
- .debug_line    0x00000299       0x7d D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
- .debug_line    0x00000316       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
- .debug_line    0x0000039a       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
- .debug_line    0x0000041a       0x9c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
- .debug_line    0x000004b6       0x9e D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00000554       0x8b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
- .debug_line    0x000005df       0x8f D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
- .debug_line    0x0000066e       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
- .debug_line    0x000006f2       0x85 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
- .debug_line    0x00000777       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
- .debug_line    0x000007f7       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
- .debug_line    0x0000087b       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
- .debug_line    0x0000091e       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
+ .debug_line    0x00000000      0x2b0 motor.o
+ .debug_line    0x000002b0       0x7d D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
+ .debug_line    0x0000032d       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobfuncs.o)
+ .debug_line    0x000003b1       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(stubs.o)
+ .debug_line    0x00000431       0x9c D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-general-exception-handler.o)
+ .debug_line    0x000004cd       0x9e D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x0000056b       0x8b D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-reset.o)
+ .debug_line    0x000005f6       0x8f D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(default-on-bootstrap.o)
+ .debug_line    0x00000685       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_getc.o)
+ .debug_line    0x00000709       0x85 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_write.o)
+ .debug_line    0x0000078e       0x80 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_exit.o)
+ .debug_line    0x0000080e       0x84 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_mon_putc.o)
+ .debug_line    0x00000892       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_disable_interrupts_lib.o)
+ .debug_line    0x00000935       0xa3 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libmchp_peripheral_32MX795F512L.a(int_restore_interrupts_lib.o)
 
 .debug_frame    0x00000000      0x3f0
  *(.debug_frame)

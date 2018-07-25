@@ -13,7 +13,7 @@ enum GAME_STAT
 };
 void GameStart();
 int CheckGameStat();
-int GameRound();
+void GameRound();
 
 
 #endif
