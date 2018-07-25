@@ -10,7 +10,7 @@
 #include <plib.h>
 #include <stdio.h>
 #define SYS_FREQ (80000000)
-#define FULL_PWM TMR2
+#define FULL_PWM PR2
 
 void PWM_config(void);
 
@@ -22,10 +22,12 @@ int js2_shoot_pwm=0;
 
 #pragma interrupt PWM_ISR ipl5 vector 8
 void PWM_ISR (void) {
-//OC3RS = pwm1; //update duty cycle register
-//pwm1 = pwm1 + acc;
-//if (pwm1<0) {pwm1 = 0;acc=-acc;}
-//else if (pwm1>PR2) {pwm1 = PR2;acc=-acc;}
+//OC1RS = js1_move_pwm; //update duty cycle register
+//js1_move_pwm = js1_move_pwm + acc;
+//if (js1_move_pwm<0) {js1_move_pwm = 0;acc=-acc;}
+//else if (js1_move_pwm>FULL_PWM/20) {js1_move_pwm = FULL_PWM/20;acc=-acc;}
+
+js1_move_pwm=FULL_PWM/20;
 OC1RS = js1_move_pwm; //update duty cycle register
 OC2RS = js1_shoot_pwm; //update duty cycle register
 OC3RS = js2_move_pwm; //update duty cycle register

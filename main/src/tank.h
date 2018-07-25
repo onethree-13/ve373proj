@@ -7,7 +7,6 @@
 #include "map.h"
 
 void InitTankStat();
-void UpdateTankDir();
 void TankMove(int num);
 void TankShoot(int num);
 

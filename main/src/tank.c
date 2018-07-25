@@ -23,16 +23,6 @@ void InitTankStat()
     map[tank2.x][tank2.y] = MAP_TANK2;
 }
 
-void UpdateTankDir()
-{
-    // TODO:
-    /* Update tank1.move_dir
-    /* Update tank2.move_dir
-    /* Update tank1.shoot_dir
-    /* Update tank2.shoot_dir
-    */
-}
-
 void TankMove(int num)
 {
     tank *tanka, *tankb;
