@@ -4,6 +4,12 @@
 #include "game.h"
 #include <stdlib.h>
 
+#ifndef _JOYSTICK_H_
+void UpdateTankDir()
+{
+}
+#endif
+
 void GameStart()
 {
     InitMapStat();
@@ -24,7 +30,7 @@ int CheckGameStat()
 }
 
 #ifndef DEBUG_WYM
-int GameRound()
+void GameRound()
 {
     UpdateMapStat();
     UpdateTankDir();
@@ -35,6 +41,5 @@ int GameRound()
     UpdateBulletStat();
     UpdateMapStat();
     UpdateBulletStat();
-    return CheckGameStat();
 }
 #endif

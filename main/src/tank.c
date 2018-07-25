@@ -14,6 +14,7 @@ void InitTankStat()
     tank1.move_dir = MOVE_STATIC;
     tank1.shoot_dir = SHOOT_DOWN;
     tank1.stat = HEALTHY;
+    tank1.HP = INITIAL_HP;
     map[tank1.x][tank1.y] = MAP_TANK1;
     tank2.x = MAP_RANGE_X - 1;
     tank2.y = MAP_RANGE_Y - 1;
@@ -21,16 +22,7 @@ void InitTankStat()
     tank2.shoot_dir = SHOOT_UP;
     tank2.stat = HEALTHY;
     map[tank2.x][tank2.y] = MAP_TANK2;
-}
-
-void UpdateTankDir()
-{
-    // TODO:
-    /* Update tank1.move_dir
-    /* Update tank2.move_dir
-    /* Update tank1.shoot_dir
-    /* Update tank2.shoot_dir
-    */
+    tank2.HP = INITIAL_HP;    
 }
 
 void TankMove(int num)

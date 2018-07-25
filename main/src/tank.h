@@ -1,13 +1,11 @@
 #ifndef _TANK_H_
 #define _TANK_H_
 #include "bullet.h"
-
 #include "game.h"
-
 #include "map.h"
+#define INITIAL_HP 5
 
 void InitTankStat();
-void UpdateTankDir();
 void TankMove(int num);
 void TankShoot(int num);
 
@@ -18,6 +16,7 @@ typedef struct
     int stat;
     int move_dir;
     int shoot_dir;
+    int HP;
 } tank;
 
 extern tank tank1, tank2;
