@@ -4,11 +4,6 @@
 #include "game.h"
 #include <stdlib.h>
 
-#ifndef _JOYSTICK_H_
-void UpdateTankDir()
-{
-}
-#endif
 
 void GameStart()
 {
