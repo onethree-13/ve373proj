@@ -59,10 +59,10 @@ kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .text                   0x9d000000         0x3350       13136  Application's executable code 
-.rodata                 0x9d003350           0x54          84  Read-only constant data 
-.data                   0x9d0033a4           0xf4         244  Data-initialization template 
-.sdata                  0x9d003498            0x4           4  Small data-initialization template 
-      Total kseg0_program_mem used  :      0x349c       13468  2.6% of 0x80000
+.rodata                 0x9d003350           0x5c          92  Read-only constant data 
+.data                   0x9d0033ac           0xf4         244  Data-initialization template 
+.sdata                  0x9d0034a0            0x4           4  Small data-initialization template 
+      Total kseg0_program_mem used  :      0x34a4       13476  2.6% of 0x80000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -84,7 +84,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception handler 
          Total kseg1_boot_mem used  :        0x20          32  2.7% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x36b4       14004  2.6% of 0x81e00
+         Total Program Memory used  :      0x36bc       14012  2.6% of 0x81e00
         --------------------------------------------------------------------------
 
 
@@ -669,21 +669,21 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.mips16.call.*)
                 0x9d003350                _text_end = .
 
-.rodata         0x9d003350       0x54
+.rodata         0x9d003350       0x5c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x9d003350       0x40 joystick.o
- .rodata        0x9d003390       0x14 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
-                0x9d003390                _io_funcs
+ .rodata        0x9d003350       0x48 joystick.o
+ .rodata        0x9d003398       0x14 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
+                0x9d003398                _io_funcs
  *(.rodata1)
-                0x9d0033a4                . = ALIGN (0x4)
+                0x9d0033ac                . = ALIGN (0x4)
 
-.sdata2         0x9d0033a4        0x0
+.sdata2         0x9d0033ac        0x0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x9d0033a4                . = ALIGN (0x4)
+                0x9d0033ac                . = ALIGN (0x4)
 
-.sbss2          0x9d0033a4        0x0
+.sbss2          0x9d0033ac        0x0
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
-                0x9d0033a4                . = ALIGN (0x4)
+                0x9d0033ac                . = ALIGN (0x4)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -694,7 +694,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
 .dbg_data       0xa0000000        0x0
                 0xa0000000                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
 
-.data           0xa0000000       0xf4 load address 0x9d0033a4
+.data           0xa0000000       0xf4 load address 0x9d0033ac
                 0xa0000000                _data_begin = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data          0xa0000000       0x20 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(exit.o)
@@ -702,7 +702,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  .data          0xa0000020       0xd4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
  *(.gnu.linkonce.d.*personality*)
  *(.data1)
-                0x9d0033a4                _data_image_begin = LOADADDR (.data)
+                0x9d0033ac                _data_image_begin = LOADADDR (.data)
 
 .eh_frame
  *(.eh_frame)
@@ -712,7 +712,7 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.got.plt)
  *(.got)
 
-.sdata          0xa00000f4        0x4 load address 0x9d003498
+.sdata          0xa00000f4        0x4 load address 0x9d0034a0
                 0xa00000f4                _sdata_begin = .
  *(.sdata .sdata.* .gnu.linkonce.s.*)
  .sdata         0xa00000f4        0x4 D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc/pic32mx/3.4.4/../../../../pic32mx/lib\libc.a(_iobdata.o)
@@ -767,12 +767,12 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
                 0xa00008fc                . = (. + _min_stack_size)
  *fill*         0xa00004fc      0x400 00
 
-.ramfunc        0xa0001000        0x0 load address 0x9d00349c
+.ramfunc        0xa0001000        0x0 load address 0x9d0034a4
                 0xa0001000                _ramfunc_begin = .
  *(.ramfunc .ramfunc.*)
                 0xa0001000                . = ALIGN (0x4)
                 0xa0001000                _ramfunc_end = .
-                0x9d00349c                _ramfunc_image_begin = LOADADDR (.ramfunc)
+                0x9d0034a4                _ramfunc_image_begin = LOADADDR (.ramfunc)
                 0x00000000                _ramfunc_length = SIZEOF (.ramfunc)
                 0x00001000                _bmxdkpba_address = (_ramfunc_begin - 0xa0000000)
                 0x00020000                _bmxdudba_address = 0x20000
@@ -1074,6 +1074,6 @@ LOAD D:/Microchip Starter Kits/PIC32 Starter Kits/MPLAB C32 Suite/bin/../lib/gcc
  *(.note.GNU-stack)
 OUTPUT(joystick.elf elf32-tradlittlemips)
 
-.mdebug.abi32   0x9d00349c        0x0
+.mdebug.abi32   0x9d0034a4        0x0
 
-.rel.dyn        0x9d00349c        0x0
+.rel.dyn        0x9d0034a4        0x0

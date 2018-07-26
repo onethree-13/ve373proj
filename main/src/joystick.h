@@ -44,56 +44,58 @@ void AN_ISR(void)
     static float tank2_dir_y = 0;
     static float tank2_shoot_x = 0;
     static float tank2_shoot_y = 0;
-    tank1_dir_y = ((float)((int)((ADC1BUF0 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
-    tank1_dir_x = ((float)((int)((ADC1BUF1 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
+
+
+    tank1_dir_y = ((float)((int)((ADC1BUF4 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
+    tank1_dir_x = ((float)((int)((ADC1BUF5 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank1_shoot_y = ((float)((int)((ADC1BUF2 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank1_shoot_x = ((float)((int)((ADC1BUF3 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
-    tank2_dir_y = ((float)((int)((ADC1BUF4 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
-    tank2_dir_x = ((float)((int)((ADC1BUF5 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
+    tank2_dir_y = ((float)((int)((ADC1BUF0 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
+    tank2_dir_x = ((float)((int)((ADC1BUF1 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank2_shoot_y = ((float)((int)((ADC1BUF6 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank2_shoot_x = ((float)((int)((ADC1BUF7 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
 
     if (tank1_dir_x >= 1 && tank1_dir_x <= 2 && tank1_dir_y >= 1 && tank1_dir_y <= 2)
         tank1_move_dir = MOVE_STATIC;
     else if (tank1_dir_y > 3)
-        tank1_move_dir = MOVE_DOWN;
-    else if (tank1_dir_y < 0.35)
         tank1_move_dir = MOVE_UP;
+    else if (tank1_dir_y < 0.35)
+        tank1_move_dir = MOVE_DOWN;
     else if (tank1_dir_x > 3)
-        tank1_move_dir = MOVE_LEFT;
-    else if (tank1_dir_x < 0.35)
         tank1_move_dir = MOVE_RIGHT;
+    else if (tank1_dir_x < 0.35)
+        tank1_move_dir = MOVE_LEFT;
 
     if (tank2_dir_x >= 1 && tank2_dir_x <= 2 && tank2_dir_y >= 1 && tank2_dir_y <= 2)
         tank2_move_dir = MOVE_STATIC;
     else if (tank2_dir_y > 3)
-        tank2_move_dir = MOVE_DOWN;
-    else if (tank2_dir_y < 0.35)
         tank2_move_dir = MOVE_UP;
+    else if (tank2_dir_y < 0.35)
+        tank2_move_dir = MOVE_DOWN;
     else if (tank2_dir_x > 3)
-        tank2_move_dir = MOVE_LEFT;
-    else if (tank2_dir_x < 0.35)
         tank2_move_dir = MOVE_RIGHT;
+    else if (tank2_dir_x < 0.35)
+        tank2_move_dir = MOVE_LEFT;
 
     if (tank1_shoot_y > 3)
-        tank1_shoot_dir = SHOOT_DOWN;
-    else if (tank1_shoot_y < 0.35)
         tank1_shoot_dir = SHOOT_UP;
+    else if (tank1_shoot_y < 0.35)
+        tank1_shoot_dir = SHOOT_DOWN;
     else if (tank1_shoot_x > 3)
-        tank1_shoot_dir = SHOOT_LEFT;
-    else if (tank1_shoot_x < 0.35)
         tank1_shoot_dir = SHOOT_RIGHT;
+    else if (tank1_shoot_x < 0.2)
+        tank1_shoot_dir = SHOOT_LEFT;
 
     if (tank2_shoot_y > 3)
-        tank2_shoot_dir = SHOOT_DOWN;
-    else if (tank2_shoot_y < 0.35)
         tank2_shoot_dir = SHOOT_UP;
+    else if (tank2_shoot_y < 0.35)
+        tank2_shoot_dir = SHOOT_DOWN;
     else if (tank2_shoot_x > 3)
-        tank2_shoot_dir = SHOOT_LEFT;
-    else if (tank2_shoot_x < 0.35)
         tank2_shoot_dir = SHOOT_RIGHT;
+    else if (tank2_shoot_x < 0.35)
+        tank2_shoot_dir = SHOOT_LEFT;
 
-    IFS1bits.AD1IF = 0;
+	    IFS1bits.AD1IF = 0;
 }
 
 //void __ISR(_ADC_VECTOR, ipl6) ADC10InterruptHandler(void){
