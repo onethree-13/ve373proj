@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 #include "../../main/src/game.h"
 #include "../../main/src/bullet.h"
 #include "../../main/src/map.h"
 #include "../../main/src/tank.h"
+
+#define DEBUG_2
 
 const char *GetMapName(enum MAP_STAT stat)
 {
@@ -20,6 +24,38 @@ const char *GetMapName(enum MAP_STAT stat)
         return "BLOCK";
     case MAP_BOOM:
         return "BOOM";
+    }
+}
+
+const char *GetMoveName(enum MOVE_DIR dir)
+{
+    switch (dir)
+    {
+    case MOVE_UP:
+        return "UP";
+    case MOVE_DOWN:
+        return "DOWN";
+    case MOVE_LEFT:
+        return "LEFT";
+    case MOVE_RIGHT:
+        return "RIGHT";
+    case MOVE_STATIC:
+        return "STATIC";
+    }
+}
+
+const char *GetShootName(enum SHOOT_DIR dir)
+{
+    switch (dir)
+    {
+    case SHOOT_UP:
+        return "UP";
+    case SHOOT_DOWN:
+        return "DOWN";
+    case SHOOT_LEFT:
+        return "LEFT";
+    case SHOOT_RIGHT:
+        return "RIGHT";
     }
 }
 
@@ -48,6 +84,57 @@ void display()
         printf("\n");
     }
 }
+
+#ifdef DEBUG_2
+int main()
+{
+    int tank1movedir, tank1shootdir, tank2movedir, tank2shootdir;
+    GameStart();
+    // tank1.x = 3;
+    // tank1.y = 3;
+    // tank1.move_dir = MOVE_STATIC;
+    // tank1.shoot_dir = SHOOT_DOWN;
+    // tank1.stat = HEALTHY;
+    // map[0][0] = MAP_EMPTY;
+    // map[tank1.x][tank1.y] = MAP_TANK1;
+    // tank2.x = 6;
+    // tank2.y = 6;
+    // tank2.move_dir = MOVE_STATIC;
+    // tank2.shoot_dir = SHOOT_UP;
+    // tank2.stat = HEALTHY;
+    // map[MAP_RANGE_X - 1][MAP_RANGE_Y - 1] = MAP_EMPTY;
+    // map[tank2.x][tank2.y] = MAP_TANK2;
+    printf("Game Initialize.\n");
+    while (!CheckGameStat())
+    {
+        tank1.move_dir = rand() % 5;
+        tank2.move_dir = rand() % 5;
+        tank1.shoot_dir = rand() % 4;
+        tank2.shoot_dir = rand() % 4;
+        TankMove(1);
+        TankMove(2);
+        TankShoot(1);
+        TankShoot(2);
+        printf("tank done\n");
+        printf("tank1: %s\t%s\n", GetMoveName(tank1.move_dir), GetShootName(tank1.shoot_dir));
+        printf("tank2: %s\t%s\n", GetMoveName(tank2.move_dir), GetShootName(tank2.shoot_dir));
+        display();
+        getchar();
+        UpdateBulletStat();
+        UpdateMapStat();
+        UpdateBulletStat();
+        UpdateMapStat();
+        printf("bullet done\n");
+        printf("tank1 HP: %d\n", tank1.HP);
+        printf("tank2 HP: %d\n", tank2.HP);
+        display();
+        getchar();
+    }
+    printf("%s\n", GetGameStatName(CheckGameStat()));
+}
+#endif
+
+#ifdef DEBUG_1
 
 int main()
 {
@@ -119,3 +206,4 @@ int main()
     }
     printf("%s\n", GetGameStatName(CheckGameStat()));
 }
+#endif

@@ -9,8 +9,10 @@ int map[MAP_RANGE_X][MAP_RANGE_Y];
 void InitMapStat()
 {
     int i, j;
-    transform_counter = 0 for (i = 0; i < MAP_RANGE_X; i++) for (j = 0; j < MAP_RANGE_Y; j++)
-        map[i][j] = default_map[i][j];
+    transform_counter = 0;
+    for (i = 0; i < MAP_RANGE_X; i++)
+        for (j = 0; j < MAP_RANGE_Y; j++)
+            map[i][j] = default_map[i][j];
 }
 
 void UpdateMapStat()
@@ -53,4 +55,3 @@ void MapTransform()
             tank2.stat = EXPLODE;
     }
 }
-void
