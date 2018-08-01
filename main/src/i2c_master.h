@@ -4,6 +4,7 @@
 #include <plib.h>
 #include <p32xxxx.h>
 #include "HardwareProfile.h"
+#include <stdio.h>
 #ifdef PIC32_STARTER_KIT
 #include <stdio.h>
 #endif
@@ -40,53 +41,82 @@
 
 int InitI2C(void)
 {
-    // UINT32 actualClock;
-    // TRISDbits.TRISD9 = 0;
-    // TRISDbits.TRISD10 = 0;
-
-    I2CSetFrequency(EEPROM_I2C_BUS, GetPeripheralClock(), I2C_CLOCK_FREQ);
-    I2CEnable(EEPROM_I2C_BUS, TRUE);
+    I2C1CONbits.SIDL = 0;   // Stop in Idle Mode bit                        -> Continue module operation when the device enters Idle mode
+    I2C1CONbits.A10M = 0;   // 10-bit Slave Address Flag bit                -> I2CxADD register is a 7-bit slave address
+    I2C1CONbits.DISSLW = 1; // Slew Rate Control Disable bit                -> Slew rate control disabled for Standard Speed mode (100 kHz)
+    I2C1CONbits.ACKDT = 0;  // Acknowledge Data bit                         -> ~ACK is sent
+    I2C1BRG = 0x0F3;        // Baud Rate Generator set to provide 100KHz for SCL with 50 MHz xtal.
 }
 
 void StartTransfer()
 {
-    while (!I2CBusIsIdle(EEPROM_I2C_BUS))
-        ;
-    I2CStart(EEPROM_I2C_BUS);
+    // 1. Turn on the I2C module by setting the ON bit (I2CxCON<15>) to ‘1’.
+    I2C1CONbits.ON = 1; // I2C Enable bit                               -> Enables the I2C module and configures the SDAx and SCLx pins as serial port pins
 
-    I2CSendByte(EEPROM_I2C_BUS, 0x78);
-    while (!I2CByteWasAcknowledged(EEPROM_I2C_BUS))
-        ;
+    //------------- WRITE begins here ------------
+    // 2. Assert a Start condition on SDAx and SCLx.
+    I2C1CONbits.PEN = 0; // Stop Condition Enable Bit                    -> Stop Condition Idle
+    I2C1CONbits.SEN = 1; // Start Condition Enable bit                   -> Initiate Start condition on SDAx and SCLx pins; cleared by module
+    while (I2C1CONbits.SEN == 1)
+        ; // SEN is to be cleared when I2C Start procedure has been completed
+
+    // 3. Load the Data on the bus
+    I2C1TRN = 0b01111000; // Write the slave address to the transmit register for I2C WRITE
+    while (I2C1STATbits.TRSTAT == 1)
+        ; // MASTER Transmit still in progress
+    while (I2C1STATbits.ACKSTAT == 1)
+        ; // Master should receive the ACK from Slave, which will clear the I2C1STAT<ACKSTAT> bit.
 }
 
 void Transfer(UINT8 data)
 {
-    I2CSendByte(EEPROM_I2C_BUS, data);
-    while (!I2CByteWasAcknowledged(EEPROM_I2C_BUS))
+    I2C1TRN = data; // Register Address
+    while (I2C1STATbits.TRSTAT == 1)
+        ;
+    while (I2C1STATbits.ACKSTAT == 1)
         ;
 }
 
 void StopTransfer()
 {
-    I2CStop(EEPROM_I2C_BUS);
+    I2C1CONbits.PEN = 1; // Stop Condition Enable Bit
 }
 
-#define TransferCommand(data) \
-    Transfer(0x80);           \
-    Transfer(data)
-#define TransferData(data) \
-    Transfer(0xC0);        \
-    Transfer(data)
-
-//FIXME: experimental
-void TransferDataList(UINT8 *data)
+void TransferCommand(UINT8 data)
 {
+    StartTransfer();
+    Transfer(0x00);
+    Transfer(data);
+    StopTransfer();
+}
+
+void TransferArg(UINT8 data)
+{
+    StartTransfer();
     Transfer(0x40);
-    while (*data)
+    Transfer(data);
+    StopTransfer();
+}
+
+void TransferDataHelper(UINT8 *data, int num)
+{
+    int i;
+    StartTransfer();
+    Transfer(0x40);
+    for (i = 0; i < num; i++)
+        Transfer(data[i]);
+    StopTransfer();
+}
+
+void TransferData(UINT8 *data, int num)
+{
+    while (num > 24)
     {
-        Transfer(*data);
-        data++;
+        TransferDataHelper(data, 24);
+        data += 24;
+        num -= 24;
     }
+    TransferDataHelper(data, num);
 }
 
 #endif

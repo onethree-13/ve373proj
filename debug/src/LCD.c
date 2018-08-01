@@ -8,16 +8,13 @@ int main()
 {
     InitI2C();
     InitLCD();
-    clear_screen(1, 1);
-    LCD_disp(1, 1, bmp1);
-
-    StartTransfer();
-    TransferCommand(0x30);
-    // Extension Command 1
-    TransferCommand(0xAF);
-    // Display OFF
-    StopTransfer();
-    LCD_OTP_Write();
     while (1)
-        ;
+    {
+        TransferCommand(0x23);
+
+        DelayMsec(100);
+        TransferCommand(0x30);
+        TransferCommand(0xAF); //Display on
+        DelayMsec(100);
+    }
 }
