@@ -4,7 +4,6 @@
 #include "game.h"
 #include <stdlib.h>
 
-
 void GameStart()
 {
     InitMapStat();
@@ -24,10 +23,8 @@ int CheckGameStat()
     return RUNNING;
 }
 
-#ifndef DEBUG_WYM
 void GameRound()
 {
-    UpdateMapStat();
     UpdateTankDir();
     TankMove(1);
     TankMove(2);
@@ -36,5 +33,6 @@ void GameRound()
     UpdateBulletStat();
     UpdateMapStat();
     UpdateBulletStat();
+    UpdateMapStat();
+    SendMap();
 }
-#endif

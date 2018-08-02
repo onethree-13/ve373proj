@@ -7,6 +7,7 @@
 void InitMapStat();
 void UpdateMapStat();
 void MapTransform();
+void SendMap();
 
 #define MAP_RANGE_X 10
 #define MAP_RANGE_Y 10

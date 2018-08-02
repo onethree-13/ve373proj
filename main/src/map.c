@@ -55,3 +55,71 @@ void MapTransform()
             tank2.stat = EXPLODE;
     }
 }
+
+void SendMap()
+{
+    int i, j;
+    char data;
+    U1_TX(0x37);
+    for (i = 0; i < MAP_RANGE_X; i++)
+    {
+        for (j = 0; j < MAP_RANGE_Y; j++)
+        {
+            switch (map[i][j])
+            {
+            case MAP_EMPTY:
+            case MAP_BOOM:
+                data = 0x30;
+                break;
+            case MAP_BULLET:
+                data = 0x31;
+                break;
+            case MAP_BLOCK:
+                data = 0x32;
+                break;
+            case MAP_TANK1:
+                switch (tank1.move_dir)
+                {
+                case MOVE_UP:
+                    data = 0x33;
+                    break;
+                case MOVE_DOWN:
+                    data = 0x34;
+                    break;
+                case MOVE_LEFT:
+                    data = 0x35;
+                    break;
+                case MOVE_RIGHT:
+                    data = 0x36;
+                    break;
+                case MOVE_STATIC:
+                    data = 0x33;
+                    break;
+                }
+                break;
+            case MAP_TANK2:
+                switch (tank1.move_dir)
+                {
+                case MOVE_UP:
+                    data = 0x33;
+                    break;
+                case MOVE_DOWN:
+                    data = 0x34;
+                    break;
+                case MOVE_LEFT:
+                    data = 0x35;
+                    break;
+                case MOVE_RIGHT:
+                    data = 0x36;
+                    break;
+                case MOVE_STATIC:
+                    data = 0x33;
+                    break;
+                }
+                break;
+            }
+            U1_TX(data);
+        }
+    }
+    U1_TX(0x39);
+}
