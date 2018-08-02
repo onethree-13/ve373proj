@@ -3,6 +3,7 @@
 #include "bullet.h"
 #include "tank.h"
 #include "game.h"
+#include "uart.h"
 
 void InitMapStat();
 void UpdateMapStat();
