@@ -65,3 +65,17 @@ Yiming WU
 |    LCD    |   U1TX   | RF3  |     J11 43     |
 |           |   U1RX   | RF2  |     J11 41     |
 
+#### map
+
+| byte |       unit |
+| ---- | ---------: |
+| 0x30 |      empty |
+| 0x31 |     bullet |
+| 0x32 |       wall |
+| 0x33 |    tank up |
+| 0x34 |  tank down |
+| 0x35 |  tank left |
+| 0x36 | tank right |
+| 0x37 |            |
+| 0x38 |      start |
+| 0x39 |        end |
