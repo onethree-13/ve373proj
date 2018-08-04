@@ -67,15 +67,18 @@ Yiming WU
 
 #### map
 
-| byte |       unit |
-| ---- | ---------: |
-| 0x30 |      empty |
-| 0x31 |     bullet |
-| 0x32 |       wall |
-| 0x33 |    tank up |
-| 0x34 |  tank down |
-| 0x35 |  tank left |
-| 0x36 | tank right |
-| 0x37 |            |
-| 0x38 |      start |
-| 0x39 |        end |
+| byte | unit        |
+| ---- | ----------- |
+| 0x30 | empty       |
+| 0x31 | bullet      |
+| 0x32 | wall        |
+| 0x33 | tank1 up    |
+| 0x34 | tank1 down  |
+| 0x35 | tank1 left  |
+| 0x36 | tank1 right |
+| 0x38 | start       |
+| 0x39 | end         |
+| 0x41 | tank2 up    |
+| 0x42 | tank2 down  |
+| 0x43 | tank2 left  |
+| 0x44 | tank2 right |

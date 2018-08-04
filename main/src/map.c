@@ -99,22 +99,22 @@ void SendMap()
                 }
                 break;
             case MAP_TANK2:
-                switch (tank1.move_dir)
+                switch (tank2.move_dir)
                 {
                 case MOVE_UP:
-                    data = 0x33;
+                    data = 0x41;
                     break;
                 case MOVE_DOWN:
-                    data = 0x34;
+                    data = 0x42;
                     break;
                 case MOVE_LEFT:
-                    data = 0x35;
+                    data = 0x43;
                     break;
                 case MOVE_RIGHT:
-                    data = 0x36;
+                    data = 0x44;
                     break;
                 case MOVE_STATIC:
-                    data = 0x33;
+                    data = 0x41;
                     break;
                 }
                 break;
