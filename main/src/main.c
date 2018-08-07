@@ -5,6 +5,7 @@
 
 #include "joystick.h"
 #include "motor.h"
+#include "uart.h"
 #include <stdlib.h>
 #include <stdio.h>
 void InitHareware();
@@ -26,7 +27,7 @@ int main()
     while (1)
         ;
 }
-void InitHareware()z
+void InitHareware()
 {
     // Initial joystick;
     // Initial motor;
