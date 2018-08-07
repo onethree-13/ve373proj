@@ -1,7 +1,7 @@
 #ifndef _GAME_H_
 #define _GAME_H_
-#include "bullet.h"
 #include "map.h"
+#include "bullet.h"
 #include "tank.h"
 
 enum GAME_STAT
@@ -14,6 +14,7 @@ enum GAME_STAT
 void GameStart();
 int CheckGameStat();
 void GameRound();
+void SendGameStat(int stat);
 
 
 #endif

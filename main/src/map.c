@@ -1,8 +1,8 @@
+#include "map.h"
 #include "bullet.h"
 #include "tank.h"
-#include "map.h"
 #include "game.h"
-#include "uart.h"
+
 #include <stdlib.h>
 
 int map[MAP_RANGE_X][MAP_RANGE_Y];

@@ -1,7 +1,8 @@
-#include "bullet.h"
-#include "tank.h"
 #include "map.h"
 #include "game.h"
+#include "bullet.h"
+#include "tank.h"
+
 #include <stdlib.h>
 
 void GameStart()
@@ -34,5 +35,21 @@ void GameRound()
     UpdateMapStat();
     UpdateBulletStat();
     UpdateMapStat();
-    SendMap();
+}
+
+void SendGameStat(int stat)
+{
+    U1_TX(0x37);
+    switch (stat)
+    {
+    case TANK1_WIN:
+        U1_TX(0x3A);
+        break;
+    case TANK2_WIN:
+        U1_TX(0x3B);
+        break;
+    case DRAW:
+        U1_TX(0x3C);
+        break;
+    }
 }

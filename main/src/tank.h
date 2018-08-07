@@ -1,8 +1,8 @@
 #ifndef _TANK_H_
 #define _TANK_H_
+#include "map.h"
 #include "bullet.h"
 #include "game.h"
-#include "map.h"
 #define INITIAL_HP 3
 #define BULLET_DMG 1
 #define CRUSHING_DMG 1

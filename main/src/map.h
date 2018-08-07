@@ -1,17 +1,18 @@
 #ifndef _MAP_H_
 #define _MAP_H_
-#include "bullet.h"
+
+#define MAP_RANGE_X 8
+#define MAP_RANGE_Y 12
+#define MAP_MAX 100
+
 #include "tank.h"
 #include "game.h"
+#include "bullet.h"
 
 void InitMapStat();
 void UpdateMapStat();
 void MapTransform();
 void SendMap();
-
-#define MAP_RANGE_X 8
-#define MAP_RANGE_Y 12
-#define MAP_MAX 100
 
 extern int map[MAP_RANGE_X][MAP_RANGE_Y];
 static int transform_counter;

@@ -2,6 +2,10 @@
     "files.associations": {
         "i2c_master.h": "c",
         "hardwareprofile.h": "c",
-        "plib.h": "c"
+        "plib.h": "c",
+        "uart.h": "c",
+        "map.h": "c",
+        "bullet.h": "c",
+        "stdlib.h": "c"
     }
 }

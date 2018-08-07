@@ -48,7 +48,6 @@ void AN_ISR(void)
     static float tank2_shoot_x = 0;
     static float tank2_shoot_y = 0;
 
-
     tank1_dir_y = ((float)((int)((ADC1BUF4 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank1_dir_x = ((float)((int)((ADC1BUF5 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
     tank1_shoot_y = ((float)((int)((ADC1BUF2 / 1024.00 * 3.3 + 0.005) * 100))) / 100;
@@ -98,7 +97,7 @@ void AN_ISR(void)
     else if (tank2_shoot_x < 0.35)
         tank2_shoot_dir = SHOOT_LEFT;
 
-	    IFS1bits.AD1IF = 0;
+    IFS1bits.AD1IF = 0;
 }
 
 //void __ISR(_ADC_VECTOR, ipl6) ADC10InterruptHandler(void){

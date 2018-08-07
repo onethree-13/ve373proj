@@ -76,8 +76,12 @@ Yiming WU
 | 0x34 | tank1 down  |
 | 0x35 | tank1 left  |
 | 0x36 | tank1 right |
-| 0x38 | start       |
-| 0x39 | end         |
+| 0x37 | start stat  |
+| 0x38 | start map   |
+| 0x39 | end map     |
+| 0x3A | tank1 win   |
+| 0x3B | tank2 win   |
+| 0x3C | draw        |
 | 0x41 | tank2 up    |
 | 0x42 | tank2 down  |
 | 0x43 | tank2 left  |

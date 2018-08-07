@@ -1,5 +1,5 @@
-#ifndef _UART_H_
-#define _UART_H_
+#ifndef _ARDUINO_UART_H_
+#define _ARDUINO_UART_H_
 #include <p32xxxx.h>
 #include <plib.h>
 

@@ -1,11 +1,13 @@
-#include "bullet.h"
-#include "tank.h"
-#include "map.h"
-#include "game.h"
-
+#include "uart.h"
 #include "joystick.h"
 #include "motor.h"
-#include "uart.h"
+
+#include "map.h"
+#include "bullet.h"
+#include "tank.h"
+#include "game.h"
+
+
 #include <stdlib.h>
 #include <stdio.h>
 void InitHareware();
@@ -16,10 +18,11 @@ void CN_handler()
     while (!CheckGameStat())
     {
         GameRound();
+        SendMap();
+        DelayMsec(1000);
     }
-    // Display info
+    SendGameStat(CheckGameStat());
 }
-//
 
 int main()
 {
@@ -29,8 +32,10 @@ int main()
 }
 void InitHareware()
 {
-    // Initial joystick;
-    // Initial motor;
-    // Initial LCD;
-    // Initial Change Notice;
+    // Initial joystick
+    // Initial motor
+    // Initial LCD
+    initIntGlobal();
+    UART_init();
+    // Initial Change Notice
 }
