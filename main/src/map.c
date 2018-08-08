@@ -61,7 +61,7 @@ void SendMap()
 {
     int i, j;
     char data;
-    U1_TX(0x37);
+    U1_TX(0x38);
     for (i = 0; i < MAP_RANGE_X; i++)
     {
         for (j = 0; j < MAP_RANGE_Y; j++)

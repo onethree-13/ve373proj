@@ -30,14 +30,15 @@ void DelayMsec(unsigned int msec)
 
 void initIntGlobal()
 {
-    INTCONbits.MVEC = 1; // Enable multiple vector interrupt
-    asm("ei");           // Enable all interrupts
+//    INTCONbits.MVEC = 1; // Enable multiple vector interrupt
+//    asm("ei");           // Enable all interrupts
+	 
+	INTEnableInterrupts();
 }
 
 void U1_TX(char c)
 {
-    while (!U1STAbits.TRMT)
-        ;
+    while (!U1STAbits.TRMT);
     U1TXREG = c;
 }
 
@@ -49,12 +50,10 @@ void UART_init()
                      // high speed mode
     U1STA = 0x0400;  // Enable Transmit
     // U1RX_ISR
-    asm("di");
-    IFS0CLR = 0x08000000; // Clear interrupt flag
-    IEC0SET = 0x08000000; // Enable U1RX interrupt
-    IPC6SET = 0x00000018; // Set priority level = 6
-    IPC6SET = 0x00000003; // Set subpriority level = 3
-    asm("ei");
+//    IFS0CLR = 0x08000000; // Clear interrupt flag
+//    IEC0SET = 0x08000000; // Enable U1RX interrupt
+//    IPC6SET = 0x00000018; // Set priority level = 6
+//    IPC6SET = 0x00000003; // Set subpriority level = 3
 }
 
 /*

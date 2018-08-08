@@ -36,7 +36,7 @@ enum MOVE_DIR tank2_move_dir;
 enum SHOOT_DIR tank1_shoot_dir;
 enum SHOOT_DIR tank2_shoot_dir;
 
-#pragma interrupt AN_ISR ipl6 vector 27
+#pragma interrupt AN_ISR ipl3 vector 27
 void AN_ISR(void)
 {
     static float tank1_dir_x = 0;
@@ -135,7 +135,7 @@ void ADC_config(void)
     //IFS1CLR=0x2;//clear interrupt flag
     //IEC1SET=0x2;//enable AD1 interrupt
     //IPC6SET=0xC000000;//priority level 3
-    ConfigIntADC10(ADC_INT_PRI_6 | ADC_INT_SUB_PRI_3 | ADC_INT_ON);
+    ConfigIntADC10(ADC_INT_PRI_3 | ADC_INT_ON);
     mAD1ClearIntFlag();
 
     AD1CON1bits.ON = 1; //turn on ADC moodule
