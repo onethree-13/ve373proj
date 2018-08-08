@@ -8,6 +8,7 @@
 void GameStart()
 {
     InitMapStat();
+	asm("NOP");
     InitTankStat();
     InitBulletStat();
 }

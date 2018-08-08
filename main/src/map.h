@@ -3,7 +3,7 @@
 
 #define MAP_RANGE_X 7
 #define MAP_RANGE_Y 12
-#define MAP_MAX 100
+#define MAP_MAX 84
 
 #include "tank.h"
 #include "game.h"

@@ -60,42 +60,42 @@ void AN_ISR(void)
     if (tank1_dir_x >= 1 && tank1_dir_x <= 2 && tank1_dir_y >= 1 && tank1_dir_y <= 2)
         tank1_move_dir = MOVE_STATIC;
     else if (tank1_dir_y > 3)
-        tank1_move_dir = MOVE_UP;
-    else if (tank1_dir_y < 0.35)
         tank1_move_dir = MOVE_DOWN;
+    else if (tank1_dir_y < 0.35)
+        tank1_move_dir = MOVE_UP;
     else if (tank1_dir_x > 3)
-        tank1_move_dir = MOVE_RIGHT;
-    else if (tank1_dir_x < 0.35)
         tank1_move_dir = MOVE_LEFT;
+    else if (tank1_dir_x < 0.35)
+        tank1_move_dir = MOVE_RIGHT;
 
     if (tank2_dir_x >= 1 && tank2_dir_x <= 2 && tank2_dir_y >= 1 && tank2_dir_y <= 2)
         tank2_move_dir = MOVE_STATIC;
     else if (tank2_dir_y > 3)
-        tank2_move_dir = MOVE_UP;
-    else if (tank2_dir_y < 0.35)
         tank2_move_dir = MOVE_DOWN;
+    else if (tank2_dir_y < 0.35)
+        tank2_move_dir = MOVE_UP;
     else if (tank2_dir_x > 3)
-        tank2_move_dir = MOVE_RIGHT;
-    else if (tank2_dir_x < 0.35)
         tank2_move_dir = MOVE_LEFT;
+    else if (tank2_dir_x < 0.35)
+        tank2_move_dir = MOVE_RIGHT;
 
     if (tank1_shoot_y > 3)
-        tank1_shoot_dir = SHOOT_UP;
-    else if (tank1_shoot_y < 0.35)
         tank1_shoot_dir = SHOOT_DOWN;
+    else if (tank1_shoot_y < 0.35)
+        tank1_shoot_dir = SHOOT_UP;
     else if (tank1_shoot_x > 3)
-        tank1_shoot_dir = SHOOT_RIGHT;
-    else if (tank1_shoot_x < 0.2)
         tank1_shoot_dir = SHOOT_LEFT;
+    else if (tank1_shoot_x < 0.2)
+        tank1_shoot_dir = SHOOT_RIGHT;
 
     if (tank2_shoot_y > 3)
-        tank2_shoot_dir = SHOOT_UP;
-    else if (tank2_shoot_y < 0.35)
         tank2_shoot_dir = SHOOT_DOWN;
+    else if (tank2_shoot_y < 0.35)
+        tank2_shoot_dir = SHOOT_UP;
     else if (tank2_shoot_x > 3)
-        tank2_shoot_dir = SHOOT_RIGHT;
-    else if (tank2_shoot_x < 0.35)
         tank2_shoot_dir = SHOOT_LEFT;
+    else if (tank2_shoot_x < 0.35)
+        tank2_shoot_dir = SHOOT_RIGHT;
 
     IFS1bits.AD1IF = 0;
 }

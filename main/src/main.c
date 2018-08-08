@@ -30,24 +30,44 @@
 #pragma config DEBUG = OFF       // Debugger Disabled for Starter Kit
 void InitHareware();
 
-void CN_ISR()
-{
-	DelayMsec(1000);
-    GameStart();
-    while (!CheckGameStat())
-    {
-        GameRound();
-        SendMap();
-        DelayMsec(5000);
-    }
-    SendGameStat(CheckGameStat());
-}
+int GameFlag;
+// -1 reset
+// 0 idle
+// 1 run
+
+//#pragma interrupt CN_ISR ipl7 vector 26
+//void CN_ISR()
+//{
+//	IEC1CLR = 0x0001; //disable interrupt
+//    GameFlag = -1;
+//	DelayMsec(1000);
+//	IFS1CLR = 0x0001; //clear interrupt flag
+//	IEC1SET = 0x0001; //re-enable interrupt
+//}
 
 int main()
 {
-	
+	GameFlag = -1;
     InitHareware();
-    while (1);
+    while (1){
+		if(GameFlag == -1){
+			GameStart();
+			GameFlag = 1;
+		}
+		if(GameFlag == 0){
+			continue;
+		}
+		if(GameFlag == 1){
+		    while (!CheckGameStat())
+		    {
+		        GameRound();
+		        SendMap();
+		        DelayMsec(5000);
+		    }
+		    SendGameStat(CheckGameStat());
+			GameFlag = 0;
+		}
+	}
 }
 void InitHareware()
 {
