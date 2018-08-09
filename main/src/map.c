@@ -13,7 +13,7 @@ void InitMapStat()
     transform_counter = 0;
     for (i = 0; i < MAP_RANGE_X; i++)
         for (j = 0; j < MAP_RANGE_Y; j++)
-            map[i][j] = default_map[i][j];
+            map[i][j] = default_map[j][i];
 }
 
 void UpdateMapStat()
@@ -66,7 +66,7 @@ void SendMap()
     {
         for (j = 0; j < MAP_RANGE_Y; j++)
         {
-            switch (map[i][j])
+            switch (map[j][i])
             {
             case MAP_EMPTY:
             case MAP_BOOM:
@@ -122,5 +122,4 @@ void SendMap()
             U1_TX(data);
         }
     }
-    U1_TX(0x39);
 }

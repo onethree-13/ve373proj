@@ -1,7 +1,6 @@
 #include "uart.h"
 #include "joystick.h"
 #include "motor.h"
-
 #include "map.h"
 #include "bullet.h"
 #include "tank.h"
@@ -60,9 +59,9 @@ int main()
 		if(GameFlag == 1){
 		    while (!CheckGameStat())
 		    {
-		        GameRound();
+ 		        GameRound();
 		        SendMap();
-		        DelayMsec(5000);
+		        DelayMsec(1000); 
 		    }
 		    SendGameStat(CheckGameStat());
 			GameFlag = 0;
