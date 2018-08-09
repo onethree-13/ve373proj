@@ -8,7 +8,7 @@
 void GameStart()
 {
     InitMapStat();
-	asm("NOP");
+    asm("NOP");
     InitTankStat();
     InitBulletStat();
 }
@@ -27,7 +27,9 @@ int CheckGameStat()
 
 void GameRound()
 {
+#ifdef _UART_H_
     UpdateTankDir();
+#endif
     TankMove(1);
     TankMove(2);
     TankShoot(1);
@@ -37,6 +39,8 @@ void GameRound()
     UpdateBulletStat();
     UpdateMapStat();
 }
+
+#ifdef _UART_H_
 
 void SendGameStat(int stat)
 {
@@ -54,3 +58,5 @@ void SendGameStat(int stat)
         break;
     }
 }
+
+#endif

@@ -1,8 +1,8 @@
 #ifndef _MAP_H_
 #define _MAP_H_
 
-#define MAP_RANGE_X 12
-#define MAP_RANGE_Y 7
+#define MAP_RANGE_X 7
+#define MAP_RANGE_Y 12
 #define MAP_MAX 84
 
 #include "tank.h"

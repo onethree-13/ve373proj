@@ -16,5 +16,4 @@ int CheckGameStat();
 void GameRound();
 void SendGameStat(int stat);
 
-
 #endif

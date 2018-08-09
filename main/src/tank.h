@@ -29,19 +29,19 @@ enum TANK_STAT
 
 enum MOVE_DIR
 {
-    MOVE_UP,
-    MOVE_DOWN,
     MOVE_LEFT,
     MOVE_RIGHT,
+    MOVE_UP,
+    MOVE_DOWN,
     MOVE_STATIC,
 };
 
 enum SHOOT_DIR
 {
-    SHOOT_UP,
-    SHOOT_DOWN,
     SHOOT_LEFT,
-    SHOOT_RIGHT
+    SHOOT_RIGHT,
+    SHOOT_UP,
+    SHOOT_DOWN
 };
 
 void InitTankStat();

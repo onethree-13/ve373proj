@@ -12,14 +12,14 @@ void InitTankStat()
     tank1.x = 0;
     tank1.y = 0;
     tank1.move_dir = MOVE_STATIC;
-    tank1.shoot_dir = SHOOT_DOWN;
+    tank1.shoot_dir = SHOOT_RIGHT;
     tank1.stat = HEALTHY;
     tank1.HP = INITIAL_HP;
     map[tank1.x][tank1.y] = MAP_TANK1;
     tank2.x = MAP_RANGE_X - 1;
     tank2.y = MAP_RANGE_Y - 1;
     tank2.move_dir = MOVE_STATIC;
-    tank2.shoot_dir = SHOOT_UP;
+    tank2.shoot_dir = SHOOT_LEFT;
     tank2.stat = HEALTHY;
     map[tank2.x][tank2.y] = MAP_TANK2;
     tank2.HP = INITIAL_HP;
@@ -45,19 +45,19 @@ void TankMove(int num)
     int x, y;
     switch (tanka->move_dir)
     {
-    case MOVE_UP:
+    case MOVE_LEFT:
         x = tanka->x;
         y = tanka->y - 1;
         break;
-    case MOVE_DOWN:
+    case MOVE_RIGHT:
         x = tanka->x;
         y = tanka->y + 1;
         break;
-    case MOVE_LEFT:
+    case MOVE_UP:
         x = tanka->x - 1;
         y = tanka->y;
         break;
-    case MOVE_RIGHT:
+    case MOVE_DOWN:
         x = tanka->x + 1;
         y = tanka->y;
         break;
@@ -142,19 +142,19 @@ void TankShoot(int num)
     int x, y;
     switch (tanka->shoot_dir)
     {
-    case SHOOT_UP:
+    case SHOOT_LEFT:
         x = tanka->x;
         y = tanka->y - 1;
         break;
-    case SHOOT_DOWN:
+    case SHOOT_RIGHT:
         x = tanka->x;
         y = tanka->y + 1;
         break;
-    case SHOOT_LEFT:
+    case SHOOT_UP:
         x = tanka->x - 1;
         y = tanka->y;
         break;
-    case SHOOT_RIGHT:
+    case SHOOT_DOWN:
         x = tanka->x + 1;
         y = tanka->y;
         break;
@@ -172,16 +172,16 @@ void TankShoot(int num)
         map[x][y] = MAP_BULLET;
         switch (tanka->shoot_dir)
         {
-        case SHOOT_UP:
+        case SHOOT_LEFT:
             bullet[x][y] = BULLET_UP;
             break;
-        case SHOOT_DOWN:
+        case SHOOT_RIGHT:
             bullet[x][y] = BULLET_DOWN;
             break;
-        case SHOOT_LEFT:
+        case SHOOT_UP:
             bullet[x][y] = BULLET_LEFT;
             break;
-        case SHOOT_RIGHT:
+        case SHOOT_DOWN:
             bullet[x][y] = BULLET_RIGHT;
             break;
         default:

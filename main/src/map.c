@@ -57,6 +57,7 @@ void MapTransform()
     }
 }
 
+#ifdef _UART_H_
 void SendMap()
 {
     int i, j;
@@ -81,16 +82,16 @@ void SendMap()
             case MAP_TANK1:
                 switch (tank1.move_dir)
                 {
-                case MOVE_UP:
+                case MOVE_LEFT:
                     data = 0x33;
                     break;
-                case MOVE_DOWN:
+                case MOVE_RIGHT:
                     data = 0x34;
                     break;
-                case MOVE_LEFT:
+                case MOVE_UP:
                     data = 0x35;
                     break;
-                case MOVE_RIGHT:
+                case MOVE_DOWN:
                     data = 0x36;
                     break;
                 case MOVE_STATIC:
@@ -101,16 +102,16 @@ void SendMap()
             case MAP_TANK2:
                 switch (tank2.move_dir)
                 {
-                case MOVE_UP:
+                case MOVE_LEFT:
                     data = 0x41;
                     break;
-                case MOVE_DOWN:
+                case MOVE_RIGHT:
                     data = 0x42;
                     break;
-                case MOVE_LEFT:
+                case MOVE_UP:
                     data = 0x43;
                     break;
-                case MOVE_RIGHT:
+                case MOVE_DOWN:
                     data = 0x44;
                     break;
                 case MOVE_STATIC:
@@ -123,3 +124,4 @@ void SendMap()
         }
     }
 }
+#endif

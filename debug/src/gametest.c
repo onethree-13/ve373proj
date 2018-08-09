@@ -31,14 +31,14 @@ const char *GetMoveName(enum MOVE_DIR dir)
 {
     switch (dir)
     {
-    case MOVE_UP:
-        return "UP";
-    case MOVE_DOWN:
-        return "DOWN";
     case MOVE_LEFT:
         return "LEFT";
     case MOVE_RIGHT:
         return "RIGHT";
+    case MOVE_UP:
+        return "UP";
+    case MOVE_DOWN:
+        return "DOWN";
     case MOVE_STATIC:
         return "STATIC";
     }
@@ -48,14 +48,14 @@ const char *GetShootName(enum SHOOT_DIR dir)
 {
     switch (dir)
     {
-    case SHOOT_UP:
-        return "UP";
-    case SHOOT_DOWN:
-        return "DOWN";
     case SHOOT_LEFT:
         return "LEFT";
     case SHOOT_RIGHT:
         return "RIGHT";
+    case SHOOT_UP:
+        return "UP";
+    case SHOOT_DOWN:
+        return "DOWN";
     }
 }
 
@@ -80,7 +80,7 @@ void display()
     for (i = 0; i < MAP_RANGE_X; i++)
     {
         for (j = 0; j < MAP_RANGE_Y; j++)
-            printf("%s\t", GetMapName(map[j][i]));
+            printf("%s\t", GetMapName(map[i][j]));
         printf("\n");
     }
 }
@@ -93,14 +93,14 @@ int main()
     // tank1.x = 3;
     // tank1.y = 3;
     // tank1.move_dir = MOVE_STATIC;
-    // tank1.shoot_dir = SHOOT_DOWN;
+    // tank1.shoot_dir = SHOOT_RIGHT;
     // tank1.stat = HEALTHY;
     // map[0][0] = MAP_EMPTY;
     // map[tank1.x][tank1.y] = MAP_TANK1;
     // tank2.x = 6;
     // tank2.y = 6;
     // tank2.move_dir = MOVE_STATIC;
-    // tank2.shoot_dir = SHOOT_UP;
+    // tank2.shoot_dir = SHOOT_LEFT;
     // tank2.stat = HEALTHY;
     // map[MAP_RANGE_X - 1][MAP_RANGE_Y - 1] = MAP_EMPTY;
     // map[tank2.x][tank2.y] = MAP_TANK2;
@@ -143,14 +143,14 @@ int main()
     tank1.x = 3;
     tank1.y = 3;
     tank1.move_dir = MOVE_STATIC;
-    tank1.shoot_dir = SHOOT_DOWN;
+    tank1.shoot_dir = SHOOT_RIGHT;
     tank1.stat = HEALTHY;
     map[0][0] = MAP_EMPTY;
     map[tank1.x][tank1.y] = MAP_TANK1;
     tank2.x = 6;
     tank2.y = 6;
     tank2.move_dir = MOVE_STATIC;
-    tank2.shoot_dir = SHOOT_UP;
+    tank2.shoot_dir = SHOOT_LEFT;
     tank2.stat = HEALTHY;
     map[MAP_RANGE_X - 1][MAP_RANGE_Y - 1] = MAP_EMPTY;
     map[tank2.x][tank2.y] = MAP_TANK2;
