@@ -2,6 +2,7 @@
 #include "game.h"
 #include "bullet.h"
 #include "tank.h"
+#include "led.h"
 
 #include <stdlib.h>
 
@@ -27,7 +28,7 @@ int CheckGameStat()
 
 void GameRound()
 {
-#ifdef _UART_H_
+#ifndef DEBUG_2
     UpdateTankDir();
 #endif
     TankMove(1);
@@ -38,9 +39,10 @@ void GameRound()
     UpdateMapStat();
     UpdateBulletStat();
     UpdateMapStat();
+	UpdateHPStat();
 }
 
-#ifdef _UART_H_
+#ifndef DEBUG_2
 
 void SendGameStat(int stat)
 {

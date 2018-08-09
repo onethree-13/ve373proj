@@ -71,6 +71,7 @@ int main()
 void InitHareware()
 {
     // Initial joystick
+	LED_config();
 	ADC_config();
     // Initial motor
 	PWM_config();

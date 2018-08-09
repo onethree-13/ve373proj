@@ -57,7 +57,7 @@ void MapTransform()
     }
 }
 
-#ifdef _UART_H_
+#ifndef DEBUG_2
 void SendMap()
 {
     int i, j;
@@ -67,7 +67,7 @@ void SendMap()
     {
         for (j = 0; j < MAP_RANGE_Y; j++)
         {
-            switch (map[j][i])
+            switch (map[i][j])
             {
             case MAP_EMPTY:
             case MAP_BOOM:
