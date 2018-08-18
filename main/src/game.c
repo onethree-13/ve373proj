@@ -2,7 +2,10 @@
 #include "game.h"
 #include "bullet.h"
 #include "tank.h"
+
+#ifndef DEBUG_2
 #include "led.h"
+#endif
 
 #include <stdlib.h>
 
@@ -39,7 +42,9 @@ void GameRound()
     UpdateMapStat();
     UpdateBulletStat();
     UpdateMapStat();
-	UpdateHPStat();
+#ifndef DEBUG_2
+    UpdateHPStat();
+#endif
 }
 
 #ifndef DEBUG_2

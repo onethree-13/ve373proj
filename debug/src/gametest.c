@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#define DEBUG_2
+
 #include "../../main/src/game.h"
 #include "../../main/src/bullet.h"
 #include "../../main/src/map.h"
 #include "../../main/src/tank.h"
 
-#define DEBUG_2
 
 const char *GetMapName(enum MAP_STAT stat)
 {
